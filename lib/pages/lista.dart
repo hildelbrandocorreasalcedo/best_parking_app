@@ -7,8 +7,7 @@ import '../peticiones/peticioneshttp.dart';
 import 'adicionar.dart';
 
 class ListaMensajeros extends StatefulWidget {
-  final title;
-  ListaMensajeros({Key? key, required this.title}) : super(key: key);
+  const ListaMensajeros({Key? key}) : super(key: key);
 
   @override
   State<ListaMensajeros> createState() => _ListaMensajerosState();
