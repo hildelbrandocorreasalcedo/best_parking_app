@@ -7,8 +7,8 @@ Future<List<Mensajero>> listaMensajeros(http.Client client) async {
   //final response =
   //    await client.get('https://desarolloweb2021a.000webhostapp.com/API/listarnotas.php');
   //var id = "2";
-  final response = await client.get(Uri.parse(
-      'https://desarolloweb2021a.000webhostapp.com/proyectomensajerosapi/listar.php'));
+  final response = await client.get(
+      Uri.parse('https://bestparkingapp.000webhostapp.com/API/listar.php'));
 
   // Usa la función compute para ejecutar parsePhotos en un isolate separado
   return compute(pasaraListas, response.body);
@@ -31,8 +31,8 @@ void adicionarMensajero(
     String soat,
     String tecno,
     String activo) async {
-  var url = Uri.parse(
-      "https://desarolloweb2021a.000webhostapp.com/proyectomensajerosapi/adicionar.php");
+  var url =
+      Uri.parse("https://bestparkingapp.000webhostapp.com/API/adicionar.php");
 
   await http.post(url, body: {
     'nombre': nombre,
@@ -58,8 +58,8 @@ void editarMensajero(
     String soat,
     String tecno,
     String activo) async {
-  var url = Uri.parse(
-      "https://desarolloweb2021a.000webhostapp.com/proyectomensajerosapi/modificar.php");
+  var url =
+      Uri.parse("https://bestparkingapp.000webhostapp.com/API/modificar.php");
 
   await http.post(url, body: {
     'id': id,
@@ -76,8 +76,8 @@ void editarMensajero(
 }
 
 void eliminarMensajero(id) async {
-  var url = Uri.parse(
-      "https://desarolloweb2021a.000webhostapp.com/proyectomensajerosapi/eliminar.php");
+  var url =
+      Uri.parse("https://bestparkingapp.000webhostapp.com/API/eliminar.php");
 
   await http.post(url, body: {
     'ideliminar': id,
