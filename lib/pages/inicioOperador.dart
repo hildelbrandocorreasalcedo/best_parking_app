@@ -17,55 +17,125 @@ class inicioOperador extends StatefulWidget {
 class _inicioOperadorState extends State<inicioOperador> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('inicio Operador'),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Inicio Operador'),
+        ),
+        body: GridView.count(
+          crossAxisCount: 2,
+          children: <Widget>[
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      RaisedButton(
+                        child: Image.asset('img/icono_ingreso.png'),
+                        onPressed: () {
+                          /*Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      ListaMensajeros()));*/
+                        },
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Entrada de vehiculor',
+                        textAlign: TextAlign.center,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      RaisedButton(
+                        child: Image.asset('img/icono_salida.png'),
+                        onPressed: () {
+                          /*Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      ListaMensajeros()));*/
+                        },
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Salida de Vehiculo',
+                        textAlign: TextAlign.center,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      RaisedButton(
+                        child: Image.asset('img/icono_consulta.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      ListaMensajeros()));
+                        },
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Consultar Vehiculos',
+                        textAlign: TextAlign.center,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      RaisedButton(
+                        child: Image.asset('img/icono_financiero.png'),
+                        onPressed: () {
+                          /*Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      ListaMensajeros()));*/
+                        },
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Consulta Financiera',
+                        textAlign: TextAlign.center,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
-      body: Center(
-          child: Column(
-        children: [
-          SizedBox(
-            height: 20,
-          ),
-          Botones(
-            titulo: "Ingreso de vehiculos",
-            ruta: "/ingreso",
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Botones(titulo: "Salida de vehiculos", ruta: "/salidas"),
-          SizedBox(
-            height: 20,
-          ),
-          Botones(titulo: "Consulta de vehiculos", ruta: "/consulta"),
-          SizedBox(
-            height: 20,
-          ),
-          Botones(titulo: "Consulta financiera", ruta: "/consultaFinanciera"),
-          SizedBox(
-            height: 20,
-          )
-        ],
-      )),
     );
-  }
-}
-
-class Botones extends StatelessWidget {
-  final titulo;
-  final ruta;
-  const Botones({Key? key, this.titulo, this.ruta}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-        onPressed: () => {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext context) => ListaMensajeros()))
-            },
-        child: Text(this.titulo));
   }
 }
