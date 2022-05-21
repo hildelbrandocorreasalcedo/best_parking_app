@@ -38,15 +38,3 @@ class Mensajero {
     );
   }
 }
-
-class Usuario {
-  var usuario;
-  var contrasena;
-
-  Usuario({
-    this.usuario,
-    this.contrasena,
-  });
-}
-
-List<Usuario> usuarios = [Usuario(usuario: 'pedro', contrasena: '123')];
