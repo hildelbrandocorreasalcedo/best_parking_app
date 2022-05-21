@@ -3,8 +3,113 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 import '../models/mensajero.dart';
+import '../models/parqueo.dart';
+import '../models/vehiculo.dart';
 import '../peticiones/peticioneshttp.dart';
 import 'adicionar.dart';
+
+//---------parqueo
+
+class ListaParqueos extends StatefulWidget {
+  const ListaParqueos({Key? key}) : super(key: key);
+
+  @override
+  State<ListaParqueos> createState() => _ListaParqueosState();
+}
+
+class _ListaParqueosState extends State<ListaParqueos> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Lista de Parqueos'),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            AgregarParqueo())).then((value) {
+                  setState(() {
+                    getInfo1(context);
+                  });
+                });
+              },
+              icon: Icon(Icons.add))
+        ],
+      ),
+      body: getInfo1(context),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.update),
+      ),
+    );
+  }
+}
+
+Widget getInfo1(BuildContext context) {
+  return FutureBuilder(
+      future: listaParqueos(http.Client()),
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        switch (snapshot.connectionState) {
+          case ConnectionState.waiting:
+            return CircularProgressIndicator();
+
+          case ConnectionState.done:
+            return snapshot.data != null
+                ? VistaParqueos(parqueos: snapshot.data)
+                : Text('No hay Datos');
+
+          default:
+            return Text('Recargar los datos');
+        }
+      });
+}
+
+class VistaParqueos extends StatelessWidget {
+  final List<Parqueo> parqueos;
+  const VistaParqueos({Key? key, required this.parqueos}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+        itemCount: parqueos.length,
+        itemBuilder: (context, posicion) {
+          return ListTile(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => Perfilparqueo(
+                            perfil: parqueos,
+                            idperfil: posicion,
+                          )));
+            },
+            leading: Container(
+              padding: EdgeInsets.all(5),
+              width: 50,
+              height: 50,
+              child: Image.network(parqueos[posicion].foto_vehiculo),
+            ),
+            title: Text(parqueos[posicion].placa),
+            subtitle: Text(parqueos[posicion].tipo),
+            trailing: Container(
+                width: 80,
+                height: 40,
+                color: Colors.yellow,
+                child: Text(parqueos[posicion].estado)),
+          );
+        });
+  }
+}
+
+
+//----------Vehiculo
+
+
+/*
+//----------mensajero
 
 class ListaMensajeros extends StatefulWidget {
   const ListaMensajeros({Key? key}) : super(key: key);
@@ -97,3 +202,4 @@ class VistaMensajeros extends StatelessWidget {
         });
   }
 }
+*/

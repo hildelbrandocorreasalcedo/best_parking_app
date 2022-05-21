@@ -126,7 +126,7 @@ class _ModificarMensajeroState extends State<ModificarMensajero> {
                   soat == true ? soattxt = "SI" : soattxt = "NO";
                   tecno == true ? tecnotxt = "SI" : tecnotxt = "NO";
                   activo == true ? activotxt = "SI" : activotxt = "NO";
-
+/*
                   editarMensajero(
                       widget.perfil[widget.idperfil].id,
                       controlNombre.text,
@@ -138,14 +138,14 @@ class _ModificarMensajeroState extends State<ModificarMensajero> {
                       soattxt,
                       tecnotxt,
                       activotxt);
-
+*/
                   //Navigator.of(context).pop();
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ListaMensajeros(),
-                        //builder: (context) => ListaMensajeros(title: 'Lista Mensajeros'),
-                      ));
+                  // Navigator.push(
+                  //  context,
+                  // MaterialPageRoute(
+                  //builder: (context) => ListaMensajeros(),
+                  //builder: (context) => ListaMensajeros(title: 'Lista Mensajeros'),
+                  //));
                 },
               ),
             ],
@@ -155,3 +155,4 @@ class _ModificarMensajeroState extends State<ModificarMensajero> {
     );
   }
 }
+//e comentado linea 142 a 148
