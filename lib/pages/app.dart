@@ -17,7 +17,6 @@ class MyApp extends StatelessWidget {
       routes: {
         LoginPage.id: (context) => LoginPage(),
       },
-      //home: ListaMensajeros(title: 'Lista Mensajeros'),
     );
   }
 }
