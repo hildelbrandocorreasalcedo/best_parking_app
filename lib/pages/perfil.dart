@@ -129,7 +129,7 @@ class Perfilmensajero extends StatelessWidget {
                                 height: 20,
                               ),
                               Text('Descripcion:'),
-                              Text('Mensajero las 24 Horas'),
+                              Text('Parqueadero las 24 Horas'),
                               SizedBox(height: 20),
                               SizedBox(height: 20),
                               Text('Verificar Placa:'),

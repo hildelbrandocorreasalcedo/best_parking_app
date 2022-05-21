@@ -1,8 +1,7 @@
-//import 'package:best_parking_app/pages/app.dart';
 import 'package:best_parking_app/pages/inicioOperador.dart';
 import 'package:flutter/material.dart';
 
-import '../models/mensajero.dart';
+import '../models/usuario.dart';
 import 'lista.dart';
 
 class LoginPage extends StatefulWidget {
@@ -124,8 +123,12 @@ class _LoginPageState extends State<LoginPage> {
         elevation: 10.0,
         color: Colors.green.shade400,
         onPressed: () {
-          if (controladorUsuario.text == usuarios[0].usuario.toString() &&
-              controladorContrasena.text == usuarios[0].contrasena.toString()) {
+          if ((controladorUsuario.text == usuarios[0].usuario.toString() &&
+                  controladorContrasena.text ==
+                      usuarios[0].contrasena.toString()) ||
+              (controladorUsuario.text == usuarios[1].usuario.toString() &&
+                  controladorContrasena.text ==
+                      usuarios[1].contrasena.toString())) {
             Navigator.push(
                 context,
                 MaterialPageRoute(
