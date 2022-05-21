@@ -41,7 +41,11 @@ class _ListaParqueosState extends State<ListaParqueos> {
       ),
       body: getInfo1(context),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          setState(() {
+            getInfo1(context);
+          });
+        },
         child: Icon(Icons.update),
       ),
     );
