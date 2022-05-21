@@ -35,11 +35,11 @@ class _inicioOperadorState extends State<inicioOperador> {
                       RaisedButton(
                         child: Image.asset('img/icono_ingreso.png'),
                         onPressed: () {
-                          /*Navigator.push(
+                          Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      ListaMensajeros()));*/
+                                      AgregarParqueo()));
                         },
                       ),
                       SizedBox(height: 10),
