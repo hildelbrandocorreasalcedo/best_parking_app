@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/mensajero.dart';
 import '../peticiones/peticioneshttp.dart';
 import 'editar.dart';
+import 'lista.dart';
 
 var contextoppal;
 
@@ -187,7 +188,12 @@ void confirmaeliminar(context, ideliminar) {
             child: Icon(Icons.check_circle),
             onPressed: () {
               eliminarMensajero(ideliminar);
-              Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ListaMensajeros(),
+                    //builder: (context) => ListaMensajeros(title: 'Lista Mensajeros'),
+                  ));
             },
           ),
         ],

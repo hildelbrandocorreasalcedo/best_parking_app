@@ -29,20 +29,20 @@ class _inicioOperadorState extends State<inicioOperador> {
           ),
           Botones(
             titulo: "Ingreso de vehiculos",
-            ruta: "/modelos",
+            ruta: "/ingreso",
           ),
           SizedBox(
             height: 20,
           ),
-          Botones(titulo: "Salida de vehiculos", ruta: "/modelos"),
+          Botones(titulo: "Salida de vehiculos", ruta: "/salidas"),
           SizedBox(
             height: 20,
           ),
-          Botones(titulo: "Consulta de vehiculos", ruta: "/modelos"),
+          Botones(titulo: "Consulta de vehiculos", ruta: "/consulta"),
           SizedBox(
             height: 20,
           ),
-          Botones(titulo: "Consulta financiera", ruta: "/modelos"),
+          Botones(titulo: "Consulta financiera", ruta: "/consultaFinanciera"),
           SizedBox(
             height: 20,
           )

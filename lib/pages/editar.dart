@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-
+import 'package:best_parking_app/pages/adicionar.dart';
 import '../models/mensajero.dart';
 import '../peticiones/peticioneshttp.dart';
+import 'lista.dart';
 
 class ModificarMensajero extends StatefulWidget {
   final idperfil;
@@ -138,7 +139,13 @@ class _ModificarMensajeroState extends State<ModificarMensajero> {
                       tecnotxt,
                       activotxt);
 
-                  Navigator.pop(context);
+                  //Navigator.of(context).pop();
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ListaMensajeros(),
+                        //builder: (context) => ListaMensajeros(title: 'Lista Mensajeros'),
+                      ));
                 },
               ),
             ],
