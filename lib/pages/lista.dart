@@ -74,31 +74,50 @@ class VistaParqueos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+        padding: EdgeInsets.all(20.0),
+        shrinkWrap: true,
         itemCount: parqueos.length,
         itemBuilder: (context, posicion) {
-          return ListTile(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext context) => Perfilparqueo(
-                            perfil: parqueos,
-                            idperfil: posicion,
-                          )));
-            },
-            leading: Container(
-              padding: EdgeInsets.all(5),
-              width: 50,
-              height: 50,
-              child: Image.network(parqueos[posicion].foto_vehiculo),
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  border: Border.all(width: 2, color: Colors.cyan)
+                  /*boxShadow: <BoxShadow>[
+                    BoxShadow(
+                      color: Colors.black26,
+                      offset: Offset(2.0, 2.0),
+                      blurRadius: 8.0,
+                    )
+                  ]*/
+                  ),
+              height: 80.0,
+              child: ListTile(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => Perfilparqueo(
+                                perfil: parqueos,
+                                idperfil: posicion,
+                              )));
+                },
+                leading: Container(
+                  padding: EdgeInsets.all(5),
+                  width: 50,
+                  height: 50,
+                  child: Image.network(parqueos[posicion].foto_vehiculo),
+                ),
+                title: Text(parqueos[posicion].placa),
+                subtitle: Text(parqueos[posicion].tipo),
+                trailing: Container(
+                    width: 80,
+                    height: 40,
+                    /*color: Colors.yellow,*/
+                    child: Text(parqueos[posicion].estado)),
+              ),
             ),
-            title: Text(parqueos[posicion].placa),
-            subtitle: Text(parqueos[posicion].tipo),
-            trailing: Container(
-                width: 80,
-                height: 40,
-                color: Colors.yellow,
-                child: Text(parqueos[posicion].estado)),
           );
         });
   }
