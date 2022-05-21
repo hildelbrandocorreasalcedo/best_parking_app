@@ -31,17 +31,17 @@ class Perfilparqueo extends StatelessWidget {
                 tooltip: 'Editar parqueo',
                 icon: Icon(Icons.edit),
                 onPressed: () {
-                  // Navigator.push(
-                  //context,
-                  //MaterialPageRoute(
-                  //builder: (BuildContext context) => ModificarMensajero(
-                  // perfil: perfil, idperfil: idperfil)));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => ModificarParqueo(
+                              perfil: perfil, idperfil: idperfil)));
                 }),
             IconButton(
                 tooltip: 'Eliminar Parqueo',
                 icon: Icon(Icons.delete),
                 onPressed: () {
-                  //confirmaeliminar(context, perfil[idperfil].id);
+                  confirmaeliminar(context, perfil[idperfil].id_parqueo);
                 })
           ],
         ),
@@ -128,6 +128,36 @@ class Perfilparqueo extends StatelessWidget {
   }
 }
 
+void confirmaeliminar(context, id_parqueo) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        content: Text('Realmente Desea Eliminar?'),
+        actions: <Widget>[
+          ElevatedButton(
+            child: Icon(Icons.cancel),
+            onPressed: () => Navigator.pop(context),
+          ),
+          ElevatedButton(
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+            ),
+            child: Icon(Icons.check_circle),
+            onPressed: () {
+              eliminarParqueo(id_parqueo);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ListaParqueos(),
+                  ));
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
 
 
 /*

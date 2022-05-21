@@ -39,6 +39,32 @@ void adicionarParqueo(String tipo, String placa, String marca,
   });
 }
 
+void editarParqueo(String id_parqueo, String tipo, String placa, String marca,
+    String hora_entrada, String foto_vehiculo) async {
+  var url =
+      Uri.parse("https://bestparkingapp.000webhostapp.com/API/modificar.php");
+
+  await http.post(url, body: {
+    'id_parqueo': id_parqueo,
+    'tipo': tipo,
+    'placa': placa,
+    'marca': marca,
+    'hora_entrada': hora_entrada,
+    'foto_vehiculo': foto_vehiculo,
+  });
+}
+
+void eliminarParqueo(id_parqueo) async {
+  var url =
+      Uri.parse("https://bestparkingapp.000webhostapp.com/API/eliminar.php");
+
+  await http.post(url, body: {
+    'id_parqueo': id_parqueo,
+  });
+}
+
+
+
 
 /*
 //----------vehiculo
