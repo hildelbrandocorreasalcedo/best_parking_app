@@ -98,29 +98,38 @@ class VistaParqueos extends StatelessWidget {
                   ),
               height: 80.0,
               child: ListTile(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) => Perfilparqueo(
-                                perfil: parqueos,
-                                idperfil: posicion,
-                              )));
-                },
-                leading: Container(
-                  padding: EdgeInsets.all(5),
-                  width: 50,
-                  height: 50,
-                  //child:Image.network(parqueos[posicion].hora_salida),
-                ),
-                title: Text('Placa: ' + parqueos[posicion].placa),
-                subtitle: Text('Tipo: ' + parqueos[posicion].tipo),
-                trailing: Container(
-                    width: 80,
-                    height: 40,
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => Perfilparqueo(
+                                  perfil: parqueos,
+                                  idperfil: posicion,
+                                )));
+                  },
+                  leading: Container(
+                    padding: EdgeInsets.all(5),
+                    width: 50,
+                    height: 50,
+                    child: Icon(parqueos[posicion].tipo == "CARRO"
+                        ? Icons.car_repair
+                        : Icons.motorcycle_outlined),
+                  ),
+                  title: Text('Placa: ' + parqueos[posicion].placa),
+                  subtitle: Text('Tipo: ' + parqueos[posicion].tipo),
+                  trailing: Container(
+                    width: 20,
                     /*color: Colors.yellow,*/
-                    child: Text('Estado: ' + parqueos[posicion].estado)),
-              ),
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: parqueos[posicion].estado == 'ACTIVO'
+                              ? Colors.green
+                              : Colors.red,
+                        ),
+                      ],
+                    ),
+                  )),
             ),
           );
         });
