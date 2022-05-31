@@ -87,7 +87,7 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                 controller: controlhora_entrada,
                 decoration: InputDecoration(
                     filled: true,
-                    labelText: 'ingrese la hora de entrada  ',
+                    labelText: 'Hora de entrada  ',
                     suffix: GestureDetector(
                       child: Icon(Icons.close),
                       onTap: () {

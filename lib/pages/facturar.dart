@@ -112,7 +112,7 @@ class _FacturarPaqueoState extends State<FacturarParqueo> {
                   controller: controlhora_entrada,
                   decoration: InputDecoration(
                       filled: true,
-                      labelText: 'ingrese la hora de entrada  ',
+                      labelText: 'Hora de entrada  ',
                       suffix: GestureDetector(
                         child: Icon(Icons.close),
                         onTap: () {
@@ -126,9 +126,25 @@ class _FacturarPaqueoState extends State<FacturarParqueo> {
                   },
                 ),
               ),
-              TextField(
-                controller: controlhora_salida,
-                decoration: InputDecoration(labelText: "Hora de salida"),
+              Padding(
+                padding: EdgeInsets.all(15.0),
+                child: TextField(
+                  controller: controlhora_salida,
+                  decoration: InputDecoration(
+                      filled: true,
+                      labelText: 'Hora de salida  ',
+                      suffix: GestureDetector(
+                        child: Icon(Icons.close),
+                        onTap: () {
+                          controlhora_salida.clear();
+                        },
+                      )),
+                  onTap: () async {
+                    var nowTime = DateTime.now();
+                    controlhora_salida.text = '$nowTime';
+                    horaentrada = nowTime;
+                  },
+                ),
               ),
               TextField(
                 controller: controlnumerohoras,

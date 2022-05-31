@@ -104,7 +104,7 @@ class _ModificarPaqueoState extends State<ModificarParqueo> {
                   controller: controlhora_entrada,
                   decoration: InputDecoration(
                       filled: true,
-                      labelText: 'ingrese la hora de entrada  ',
+                      labelText: 'Hora de entrada  ',
                       suffix: GestureDetector(
                         child: Icon(Icons.close),
                         onTap: () {
