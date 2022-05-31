@@ -24,6 +24,7 @@ class _FacturarPaqueoState extends State<FacturarParqueo> {
   TextEditingController controltotalpagar = TextEditingController();
 
   late DateTime? horaentrada;
+  late DateTime? horasalida;
 
   @override
   void initState() {
@@ -142,7 +143,7 @@ class _FacturarPaqueoState extends State<FacturarParqueo> {
                   onTap: () async {
                     var nowTime = DateTime.now();
                     controlhora_salida.text = '$nowTime';
-                    horaentrada = nowTime;
+                    horasalida = nowTime;
                   },
                 ),
               ),
