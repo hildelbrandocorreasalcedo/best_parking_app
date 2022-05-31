@@ -5,7 +5,7 @@ class Parqueo {
   final String placa;
   final String marca;
   final String hora_entrada;
-  final String foto_vehiculo;
+  final String hora_salida;
   final String estado;
 
   Parqueo({
@@ -15,7 +15,7 @@ class Parqueo {
     required this.placa,
     required this.marca,
     required this.hora_entrada,
-    required this.foto_vehiculo,
+    required this.hora_salida,
     required this.estado,
   });
 
@@ -27,7 +27,7 @@ class Parqueo {
       placa: json['placa'],
       marca: json['marca'],
       hora_entrada: json['hora_entrada'],
-      foto_vehiculo: json['foto_vehiculo'],
+      hora_salida: json['hora_salida'],
       estado: json['estado'],
     );
   }

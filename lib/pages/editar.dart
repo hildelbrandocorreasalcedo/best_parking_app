@@ -18,7 +18,7 @@ class _ModificarPaqueoState extends State<ModificarParqueo> {
   TextEditingController controlplaca = TextEditingController();
   TextEditingController controlmarca = TextEditingController();
   TextEditingController controlhora_entrada = TextEditingController();
-  TextEditingController controlfoto_vehiculo = TextEditingController();
+  TextEditingController controlhora_salida = TextEditingController();
 
   @override
   void initState() {
@@ -32,8 +32,8 @@ class _ModificarPaqueoState extends State<ModificarParqueo> {
         TextEditingController(text: widget.perfil[widget.idperfil].marca);
     controlhora_entrada = TextEditingController(
         text: widget.perfil[widget.idperfil].hora_entrada);
-    controlfoto_vehiculo = TextEditingController(
-        text: widget.perfil[widget.idperfil].foto_vehiculo);
+    controlhora_salida =
+        TextEditingController(text: widget.perfil[widget.idperfil].hora_salida);
 
     // TODO: implement initState
     super.initState();
@@ -68,8 +68,8 @@ class _ModificarPaqueoState extends State<ModificarParqueo> {
                 decoration: InputDecoration(labelText: "Hora de entrada"),
               ),
               TextField(
-                controller: controlfoto_vehiculo,
-                decoration: InputDecoration(labelText: "Foto del vehiculo"),
+                controller: controlhora_salida,
+                decoration: InputDecoration(labelText: "Hora de salida"),
               ),
               ElevatedButton(
                 child: Text("Modificar Mensajero"),
@@ -80,7 +80,7 @@ class _ModificarPaqueoState extends State<ModificarParqueo> {
                       controlplaca.text,
                       controlmarca.text,
                       controlhora_entrada.text,
-                      controlfoto_vehiculo.text);
+                      controlhora_salida.text);
                   Navigator.push(
                       context,
                       MaterialPageRoute(

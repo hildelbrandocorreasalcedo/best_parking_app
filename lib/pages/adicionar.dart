@@ -16,7 +16,7 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
   TextEditingController controlplaca = TextEditingController();
   TextEditingController controlmarca = TextEditingController();
   TextEditingController controlhora_entrada = TextEditingController();
-  TextEditingController controlfoto_vehiculo = TextEditingController();
+  TextEditingController controlhora_salida = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -48,9 +48,9 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                   InputDecoration(labelText: 'Ingrese la de hora entrada'),
             ),
             TextField(
-              controller: controlfoto_vehiculo,
+              controller: controlhora_salida,
               decoration:
-                  InputDecoration(labelText: 'Ingrese la foto vehiculo'),
+                  InputDecoration(labelText: 'Ingrese la de hora salida'),
             ),
             ElevatedButton(
                 onPressed: () {
@@ -59,7 +59,7 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                       controlplaca.text,
                       controlmarca.text,
                       controlhora_entrada.text,
-                      controlfoto_vehiculo.text);
+                      controlhora_salida.text);
                   Navigator.of(context).pop();
                 },
                 child: Text('Adicionar Parqueo'))

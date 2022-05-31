@@ -63,7 +63,7 @@ class Perfilparqueo extends StatelessWidget {
                       //color: Colors.blue,
                       child: Card(
                         elevation: 2,
-                        child: Image.network(perfil[idperfil].foto_vehiculo),
+                        //child: Image.network(perfil[idperfil].hora_salida),
                       ),
                     ),
                   ),

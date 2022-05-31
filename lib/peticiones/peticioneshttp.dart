@@ -10,8 +10,8 @@ Future<List<Parqueo>> listaParqueos(http.Client client) async {
   //final response =
   //    await client.get('https://desarolloweb2021a.000webhostapp.com/API/listarnotas.php');
   //var id = "2";
-  final response = await client.get(
-      Uri.parse('https://bestparkingapp.000webhostapp.com/API/listar.php'));
+  final response = await client.get(Uri.parse(
+      'https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/listar.php'));
 
   // Usa la función compute para ejecutar parsePhotos en un isolate separado
   return compute(pasaraListas, response.body);
@@ -25,23 +25,23 @@ List<Parqueo> pasaraListas(String responseBody) {
 }
 
 void adicionarParqueo(String tipo, String placa, String marca,
-    String hora_entrada, String foto_vehiculo) async {
-  var url =
-      Uri.parse("https://bestparkingapp.000webhostapp.com/API/adicionar.php");
+    String hora_entrada, String hora_salida) async {
+  var url = Uri.parse(
+      "https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/adicionar.php");
 
   await http.post(url, body: {
     'tipo': tipo,
     'placa': placa,
     'marca': marca,
     'hora_entrada': hora_entrada,
-    'foto_vehiculo': foto_vehiculo,
+    'hora_salida': hora_salida,
   });
 }
 
 void editarParqueo(String id_parqueo, String tipo, String placa, String marca,
-    String hora_entrada, String foto_vehiculo) async {
-  var url =
-      Uri.parse("https://bestparkingapp.000webhostapp.com/API/modificar.php");
+    String hora_entrada, String hora_salida) async {
+  var url = Uri.parse(
+      "https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/modificar.php");
 
   await http.post(url, body: {
     'id_parqueo': id_parqueo,
@@ -49,13 +49,13 @@ void editarParqueo(String id_parqueo, String tipo, String placa, String marca,
     'placa': placa,
     'marca': marca,
     'hora_entrada': hora_entrada,
-    'foto_vehiculo': foto_vehiculo,
+    'hora_salida': hora_salida,
   });
 }
 
 void eliminarParqueo(id_parqueo) async {
-  var url =
-      Uri.parse("https://bestparkingapp.000webhostapp.com/API/eliminar.php");
+  var url = Uri.parse(
+      "https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/eliminar.php");
 
   await http.post(url, body: {
     'id_parqueo': id_parqueo,
