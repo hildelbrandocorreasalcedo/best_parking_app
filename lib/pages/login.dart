@@ -23,8 +23,8 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   void initState() {
-    controladorUsuario = TextEditingController();
-    controladorClave = TextEditingController();
+    controladorUsuario = TextEditingController(text: 'admin');
+    controladorClave = TextEditingController(text: '123');
   }
 
   Widget build(BuildContext context) {
@@ -68,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
     return StreamBuilder(
         builder: (BuildContext context, AsyncSnapshot snapshot) {
       return Container(
-        padding: EdgeInsets.symmetric(horizontal: 90.0),
+        padding: EdgeInsets.symmetric(horizontal: 50.0),
         child: TextField(
           keyboardType: TextInputType.emailAddress,
           cursorColor: Colors.red.shade400,
@@ -79,7 +79,13 @@ class _LoginPageState extends State<LoginPage> {
           controller: controladorUsuario,
           decoration: InputDecoration(
               icon: Icon(Icons.account_box),
-              hintText: 'ejemplo@gmail.com',
+              suffix: GestureDetector(
+                child: Icon(Icons.close),
+                onTap: () {
+                  controladorUsuario.clear();
+                },
+              ),
+              hintText: 'User123',
               labelText: 'USUARIO'),
           onChanged: (value) {},
         ),
@@ -91,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
     return StreamBuilder(
         builder: (BuildContext context, AsyncSnapshot snapshot) {
       return Container(
-        padding: EdgeInsets.symmetric(horizontal: 90.0),
+        padding: EdgeInsets.symmetric(horizontal: 50.0),
         child: TextField(
           controller: controladorClave,
           obscureText: true,
@@ -102,6 +108,12 @@ class _LoginPageState extends State<LoginPage> {
           ),
           decoration: InputDecoration(
               icon: Icon(Icons.lock),
+              suffix: GestureDetector(
+                child: Icon(Icons.close),
+                onTap: () {
+                  controladorClave.clear();
+                },
+              ),
               hintText: 'Ejemplo123',
               labelText: 'CLAVE'),
           onChanged: (value) {},
@@ -127,7 +139,7 @@ class _LoginPageState extends State<LoginPage> {
         ),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         elevation: 10.0,
-        color: Colors.green.shade400,
+        color: Colors.blue.shade400,
         onPressed: () {
           validarUsuarios(
                   http.Client(), controladorUsuario.text, controladorClave.text)
@@ -157,7 +169,7 @@ class _LoginPageState extends State<LoginPage> {
                                 });
                               },
                               child: Text(
-                                'Atras',
+                                'ATRAS',
                                 style:
                                     TextStyle(color: Colors.red, fontSize: 15),
                               ),

@@ -60,6 +60,8 @@ flutter:
     - img/icono_salida.png
     - img/icono_consulta.png
     - img/icono_financiero.png
+    - img/fondoParking.jpg
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
