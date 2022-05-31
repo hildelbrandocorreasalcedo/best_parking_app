@@ -63,7 +63,7 @@ class Perfilparqueo extends StatelessWidget {
                       //color: Colors.blue,
                       child: Card(
                         elevation: 2,
-                        //child: Image.network(perfil[idperfil].hora_salida),
+                        //child: Image.network(perfil[idperfil].foto),
                       ),
                     ),
                   ),
@@ -76,10 +76,15 @@ class Perfilparqueo extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                perfil[idperfil].tipo,
+                                'Tipo: ' + perfil[idperfil].tipo,
                                 style: TextStyle(fontSize: 20),
                               ),
-                              Text(perfil[idperfil].marca),
+                              Text('Marca: ' + perfil[idperfil].marca),
+                              Text(
+                                'Hora Entrada: ' +
+                                    perfil[idperfil].hora_entrada,
+                                style: TextStyle(fontSize: 20),
+                              ),
                               SizedBox(
                                 height: 20,
                               ),

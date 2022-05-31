@@ -24,8 +24,15 @@ List<Parqueo> pasaraListas(String responseBody) {
   return pasar.map<Parqueo>((json) => Parqueo.fromJson(json)).toList();
 }
 
-void adicionarParqueo(String tipo, String placa, String marca,
-    String hora_entrada, String hora_salida) async {
+void adicionarParqueo(
+    String tipo,
+    String placa,
+    String marca,
+    String hora_entrada,
+    String hora_salida,
+    String numerohoras,
+    String valorhora,
+    String totalpagar) async {
   var url = Uri.parse(
       "https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/adicionar.php");
 
@@ -35,11 +42,22 @@ void adicionarParqueo(String tipo, String placa, String marca,
     'marca': marca,
     'hora_entrada': hora_entrada,
     'hora_salida': hora_salida,
+    'numerohoras': numerohoras,
+    'valorhora': valorhora,
+    'totalpagar': totalpagar,
   });
 }
 
-void editarParqueo(String id_parqueo, String tipo, String placa, String marca,
-    String hora_entrada, String hora_salida) async {
+void editarParqueo(
+    String id_parqueo,
+    String tipo,
+    String placa,
+    String marca,
+    String hora_entrada,
+    String hora_salida,
+    String numerohoras,
+    String valorhora,
+    String totalpagar) async {
   var url = Uri.parse(
       "https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/modificar.php");
 
@@ -49,7 +67,6 @@ void editarParqueo(String id_parqueo, String tipo, String placa, String marca,
     'placa': placa,
     'marca': marca,
     'hora_entrada': hora_entrada,
-    'hora_salida': hora_salida,
   });
 }
 
@@ -59,5 +76,31 @@ void eliminarParqueo(id_parqueo) async {
 
   await http.post(url, body: {
     'id_parqueo': id_parqueo,
+  });
+}
+
+void facturarParqueo(
+    String id_parqueo,
+    String tipo,
+    String placa,
+    String marca,
+    String hora_entrada,
+    String hora_salida,
+    String numerohoras,
+    String valorhora,
+    String totalpagar) async {
+  var url = Uri.parse(
+      "https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/facturar.php");
+
+  await http.post(url, body: {
+    'id_parqueo': id_parqueo,
+    'tipo': tipo,
+    'placa': placa,
+    'marca': marca,
+    'hora_entrada': hora_entrada,
+    'hora_salida': hora_salida,
+    'numerohoras': numerohoras,
+    'valorhora': valorhora,
+    'totalpagar': totalpagar,
   });
 }

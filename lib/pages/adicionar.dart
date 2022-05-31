@@ -18,6 +18,9 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
   TextEditingController controlmarca = TextEditingController();
   TextEditingController controlhora_entrada = TextEditingController();
   TextEditingController controlhora_salida = TextEditingController();
+  TextEditingController controlnumerohoras = TextEditingController();
+  TextEditingController controlvalorhora = TextEditingController();
+  TextEditingController controltotalpagar = TextEditingController();
 
   String seleccionado_1 = "";
   late DateTime? horaentrada;
@@ -137,11 +140,15 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
             ElevatedButton(
                 onPressed: () {
                   adicionarParqueo(
-                      controltipo.text,
-                      controlplaca.text,
-                      controlmarca.text,
-                      controlhora_entrada.text,
-                      controlhora_salida.text);
+                    controltipo.text,
+                    controlplaca.text,
+                    controlmarca.text,
+                    controlhora_entrada.text,
+                    controlhora_salida.text,
+                    controlnumerohoras.text,
+                    controlvalorhora.text,
+                    controltotalpagar.text,
+                  );
                   Navigator.of(context).pop();
                 },
                 child: Text('Adicionar Parqueo'))

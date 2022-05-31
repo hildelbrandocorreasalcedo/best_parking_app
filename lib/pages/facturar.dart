@@ -4,16 +4,16 @@ import 'package:best_parking_app/pages/adicionar.dart';
 import '../peticiones/peticioneshttp.dart';
 import 'lista.dart';
 
-class ModificarParqueo extends StatefulWidget {
+class FacturarParqueo extends StatefulWidget {
   final idperfil;
   final List<Parqueo> perfil;
-  ModificarParqueo({required this.perfil, this.idperfil});
+  FacturarParqueo({required this.perfil, this.idperfil});
 
   @override
-  _ModificarPaqueoState createState() => _ModificarPaqueoState();
+  _FacturarPaqueoState createState() => _FacturarPaqueoState();
 }
 
-class _ModificarPaqueoState extends State<ModificarParqueo> {
+class _FacturarPaqueoState extends State<FacturarParqueo> {
   TextEditingController controltipo = TextEditingController();
   TextEditingController controlplaca = TextEditingController();
   TextEditingController controlmarca = TextEditingController();
@@ -37,6 +37,14 @@ class _ModificarPaqueoState extends State<ModificarParqueo> {
         TextEditingController(text: widget.perfil[widget.idperfil].marca);
     controlhora_entrada = TextEditingController(
         text: widget.perfil[widget.idperfil].hora_entrada);
+    controlhora_salida =
+        TextEditingController(text: widget.perfil[widget.idperfil].hora_salida);
+    controlhora_salida =
+        TextEditingController(text: widget.perfil[widget.idperfil].numerohoras);
+    controlhora_salida =
+        TextEditingController(text: widget.perfil[widget.idperfil].valorhora);
+    controlhora_salida =
+        TextEditingController(text: widget.perfil[widget.idperfil].totalpagar);
     // TODO: implement initState
     super.initState();
   }
@@ -46,7 +54,7 @@ class _ModificarPaqueoState extends State<ModificarParqueo> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text("modificar Parqueo"),
+        title: Text("Facturar Parqueo"),
       ),
       body: Container(
         padding: EdgeInsets.all(5),
@@ -118,8 +126,24 @@ class _ModificarPaqueoState extends State<ModificarParqueo> {
                   },
                 ),
               ),
+              TextField(
+                controller: controlhora_salida,
+                decoration: InputDecoration(labelText: "Hora de salida"),
+              ),
+              TextField(
+                controller: controlnumerohoras,
+                decoration: InputDecoration(labelText: "Numero de horas"),
+              ),
+              TextField(
+                controller: controlvalorhora,
+                decoration: InputDecoration(labelText: "Valor por hora"),
+              ),
+              TextField(
+                controller: controltotalpagar,
+                decoration: InputDecoration(labelText: "Total a pagar"),
+              ),
               ElevatedButton(
-                child: Text("Modificar Parqueo"),
+                child: Text("Facturar Parqueo"),
                 onPressed: () {
                   editarParqueo(
                     widget.perfil[widget.idperfil].id_parqueo,

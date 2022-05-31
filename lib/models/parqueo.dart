@@ -7,6 +7,9 @@ class Parqueo {
   final String hora_entrada;
   final String hora_salida;
   final String estado;
+  final String numerohoras;
+  final String valorhora;
+  final String totalpagar;
 
   Parqueo({
     required this.id_parqueo,
@@ -17,6 +20,9 @@ class Parqueo {
     required this.hora_entrada,
     required this.hora_salida,
     required this.estado,
+    required this.numerohoras,
+    required this.valorhora,
+    required this.totalpagar,
   });
 
   factory Parqueo.fromJson(Map<String, dynamic> json) {
@@ -29,6 +35,9 @@ class Parqueo {
       hora_entrada: json['hora_entrada'],
       hora_salida: json['hora_salida'],
       estado: json['estado'],
+      numerohoras: json['numerohoras'],
+      valorhora: json['valorhora'],
+      totalpagar: json['totalpagar'],
     );
   }
 }

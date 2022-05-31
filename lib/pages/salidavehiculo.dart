@@ -22,7 +22,7 @@ class _salidaVehiculoState extends State<salidaVehiculo> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-            'Lista de Parqueos'), /*
+            'Salida de vehiculos: Lista de Parqueos'), /*
         actions: [
           IconButton(
               onPressed: () {
@@ -111,15 +111,15 @@ class VistaParqueos extends StatelessWidget {
                   padding: EdgeInsets.all(5),
                   width: 50,
                   height: 50,
-                  //child: Image.network(parqueos[posicion].hora_salida),
+                  //child: Image.network(parqueos[posicion].Foto),
                 ),
-                title: Text(parqueos[posicion].placa),
-                subtitle: Text(parqueos[posicion].tipo),
+                title: Text('Placa: ' + parqueos[posicion].placa),
+                subtitle: Text('tipo: ' + parqueos[posicion].tipo),
                 trailing: Container(
                     width: 80,
                     height: 40,
                     /*color: Colors.yellow,*/
-                    child: Text(parqueos[posicion].estado)),
+                    child: Text('Estado: ' + parqueos[posicion].estado)),
               ),
             ),
           );
