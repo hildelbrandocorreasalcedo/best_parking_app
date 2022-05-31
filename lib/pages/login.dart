@@ -1,8 +1,14 @@
+import 'package:best_parking_app/pages/adicionar.dart';
 import 'package:best_parking_app/pages/inicioOperador.dart';
+import 'package:best_parking_app/peticiones/peticioneshttp.dart';
 import 'package:flutter/material.dart';
 
 import '../models/usuario.dart';
+import '../peticiones/peticionesusuarios.dart';
 import 'lista.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
 
 class LoginPage extends StatefulWidget {
   static String id = 'login_page';
@@ -13,12 +19,12 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   late TextEditingController controladorUsuario;
-  late TextEditingController controladorContrasena;
+  late TextEditingController controladorClave;
 
   @override
   void initState() {
     controladorUsuario = TextEditingController();
-    controladorContrasena = TextEditingController();
+    controladorClave = TextEditingController();
   }
 
   Widget build(BuildContext context) {
@@ -87,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
       return Container(
         padding: EdgeInsets.symmetric(horizontal: 90.0),
         child: TextField(
-          controller: controladorContrasena,
+          controller: controladorClave,
           obscureText: true,
           cursorColor: Colors.red.shade400,
           style: TextStyle(
@@ -123,43 +129,42 @@ class _LoginPageState extends State<LoginPage> {
         elevation: 10.0,
         color: Colors.green.shade400,
         onPressed: () {
-          if ((controladorUsuario.text == usuarios[0].usuario.toString() &&
-                  controladorContrasena.text ==
-                      usuarios[0].contrasena.toString()) ||
-              (controladorUsuario.text == usuarios[1].usuario.toString() &&
-                  controladorContrasena.text ==
-                      usuarios[1].contrasena.toString())) {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      inicioOperador(title: 'inicio Operador'),
-                  //builder: (context) => ListaMensajeros(title: 'Lista Mensajeros'),
-                ));
-            controladorUsuario.text = '';
-            controladorContrasena.text = '';
-          } else {
-            showDialog(
-                context: context,
-                builder: (_) => AlertDialog(
-                        title: Text('ADVERTENCIA'),
-                        content: Text('Usuario/Clave Incorrectos',
-                            style:
-                                TextStyle(color: Colors.black, fontSize: 20)),
-                        actions: [
-                          TextButton(
-                            onPressed: () {
-                              setState(() {
-                                Navigator.pop(context);
-                              });
-                            },
-                            child: Text(
-                              'Atras',
-                              style: TextStyle(color: Colors.red, fontSize: 15),
+          validarUsuarios(
+                  http.Client(), controladorUsuario.text, controladorClave.text)
+              .then((response) {
+            print(response.length);
+            if (response.length == 1) {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => inicioOperador(title: 'Usuarios'),
+                  ));
+              controladorUsuario.text = '';
+              controladorClave.text = '';
+            } else {
+              showDialog(
+                  context: context,
+                  builder: (_) => AlertDialog(
+                          title: Text('ADVERTENCIA'),
+                          content: Text('Usuario/Clave Incorrectos',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 20)),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  Navigator.pop(context);
+                                });
+                              },
+                              child: Text(
+                                'Atras',
+                                style:
+                                    TextStyle(color: Colors.red, fontSize: 15),
+                              ),
                             ),
-                          ),
-                        ]));
-          }
+                          ]));
+            }
+          });
         },
       );
     });

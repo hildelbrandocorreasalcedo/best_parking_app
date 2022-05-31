@@ -17,10 +17,22 @@ class _inicioOperadorState extends State<inicioOperador> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Inicio Operador'),
-        ),
+        appBar: AppBar(title: Text('Inicio Operador'), actions: [
+          Center(
+            child: IconButton(
+              icon: const Icon(Icons.assignment_return_outlined),
+              color: Colors.grey.shade100,
+              tooltip: 'Log-Out',
+              onPressed: () {
+                setState(() {
+                  Navigator.pop(context);
+                });
+              },
+            ),
+          )
+        ]),
         body: GridView.count(
           crossAxisCount: 2,
           children: <Widget>[
