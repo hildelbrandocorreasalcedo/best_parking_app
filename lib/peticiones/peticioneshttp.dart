@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:best_parking_app/models/mensajero.dart';
 import 'package:best_parking_app/models/parqueo.dart';
 import 'package:best_parking_app/models/vehiculo.dart';
 import 'package:flutter/foundation.dart';

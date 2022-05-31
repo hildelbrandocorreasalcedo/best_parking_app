@@ -2,7 +2,6 @@ import 'package:best_parking_app/pages/perfil.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import '../models/mensajero.dart';
 import '../peticiones/peticioneshttp.dart';
 import 'adicionar.dart';
 import 'lista.dart';

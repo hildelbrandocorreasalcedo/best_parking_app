@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../models/mensajero.dart';
 import '../models/parqueo.dart';
 import '../models/vehiculo.dart';
 import '../peticiones/peticioneshttp.dart';

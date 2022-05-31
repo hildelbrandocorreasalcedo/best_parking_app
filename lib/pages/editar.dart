@@ -1,7 +1,6 @@
 import 'package:best_parking_app/models/parqueo.dart';
 import 'package:flutter/material.dart';
 import 'package:best_parking_app/pages/adicionar.dart';
-import '../models/mensajero.dart';
 import '../peticiones/peticioneshttp.dart';
 import 'lista.dart';
 
