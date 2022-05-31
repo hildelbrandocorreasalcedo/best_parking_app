@@ -111,7 +111,7 @@ class VistaParqueos extends StatelessWidget {
                   padding: EdgeInsets.all(5),
                   width: 50,
                   height: 50,
-                  //child: Image.network(parqueos[posicion].hora_salida),
+                  //child:Image.network(parqueos[posicion].hora_salida),
                 ),
                 title: Text('Placa: ' + parqueos[posicion].placa),
                 subtitle: Text('Tipo: ' + parqueos[posicion].tipo),

@@ -81,7 +81,7 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                 onChanged: (value) {},
               ),
             ),
-            Padding(
+            /*Padding(
               padding: EdgeInsets.all(15.0),
               child: TextField(
                 controller: controlhora_entrada,
@@ -101,7 +101,8 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                 },
               ),
             ),
-            /*Container(
+            ///////////////////////////////////////////////
+            Container(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               padding: EdgeInsets.all(20),
@@ -137,21 +138,48 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
               decoration:
                   InputDecoration(labelText: 'Ingrese la de hora salida'),
             ),*/
-            ElevatedButton(
+
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
+              child: MaterialButton(
+                minWidth: 200.0,
+                height: 60.0,
                 onPressed: () {
-                  adicionarParqueo(
-                    controltipo.text,
-                    controlplaca.text,
-                    controlmarca.text,
-                    controlhora_entrada.text,
-                    controlhora_salida.text,
-                    controlnumerohoras.text,
-                    controlvalorhora.text,
-                    controltotalpagar.text,
-                  );
-                  Navigator.of(context).pop();
+                  if (controltipo.text.isNotEmpty &&
+                      controlplaca.text.isNotEmpty &&
+                      controlmarca.text.isNotEmpty) {
+                    var nowTime = DateTime.now();
+                    horaentrada = nowTime;
+                    adicionarParqueo(
+                      controltipo.text,
+                      controlplaca.text,
+                      controlmarca.text,
+                      horaentrada.toString(),
+                      controlhora_salida.text,
+                      controlnumerohoras.text,
+                      controlvalorhora.text,
+                      controltotalpagar.text,
+                    );
+
+                    Navigator.of(context).pop();
+                    showDialog(
+                        context: context,
+                        builder: (_) => AlertDialog(
+                              content: Text('Agregado correctamente'),
+                            ));
+                  } else {
+                    showDialog(
+                        context: context,
+                        builder: (_) => AlertDialog(
+                              content: Text('No se aceptan campos vacios'),
+                            ));
+                  }
                 },
-                child: Text('Adicionar Parqueo'))
+                color: Colors.lightBlue,
+                child: Text('Registrar',
+                    style: TextStyle(color: Colors.white, fontSize: 20)),
+              ),
+            ),
           ],
         )),
       ),
