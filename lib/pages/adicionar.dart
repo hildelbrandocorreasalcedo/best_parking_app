@@ -1,3 +1,4 @@
+//import 'package:dropdownfield/dropdownfield.dart';
 import 'package:flutter/material.dart';
 
 import '../peticiones/peticioneshttp.dart';
@@ -18,6 +19,9 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
   TextEditingController controlhora_entrada = TextEditingController();
   TextEditingController controlhora_salida = TextEditingController();
 
+  String seleccionado_1 = "";
+  late DateTime? horaentrada;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,19 +33,97 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
         child: Center(
             child: ListView(
           children: [
-            TextField(
-              controller: controltipo,
-              decoration:
-                  InputDecoration(labelText: 'Ingrese el tipo de vehiculo'),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 30.0),
+              child: TextField(
+                cursorColor: Colors.red.shade400,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                ),
+                controller: controlplaca,
+                decoration: InputDecoration(
+                    icon: Icon(Icons.account_box),
+                    labelText: 'Placa del vehiculo'),
+                onChanged: (value) {},
+              ),
             ),
-            TextField(
-              controller: controlplaca,
-              decoration: InputDecoration(labelText: 'Ingrese la placa'),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 30.0),
+              child: TextField(
+                cursorColor: Colors.red.shade400,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                ),
+                controller: controltipo,
+                decoration: InputDecoration(
+                    icon: Icon(Icons.account_box),
+                    labelText: 'Tipo del vehiculo'),
+                onChanged: (value) {},
+              ),
             ),
-            TextField(
-              controller: controlmarca,
-              decoration: InputDecoration(labelText: 'Ingrese la marca'),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 30.0),
+              child: TextField(
+                cursorColor: Colors.red.shade400,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                ),
+                controller: controlmarca,
+                decoration: InputDecoration(
+                    icon: Icon(Icons.account_box),
+                    labelText: 'Marca del vehiculo'),
+                onChanged: (value) {},
+              ),
             ),
+            Padding(
+              padding: EdgeInsets.all(15.0),
+              child: TextField(
+                controller: controlhora_entrada,
+                decoration: InputDecoration(
+                    filled: true,
+                    labelText: 'ingrese la hora de entrada  ',
+                    suffix: GestureDetector(
+                      child: Icon(Icons.close),
+                      onTap: () {
+                        controlhora_entrada.clear();
+                      },
+                    )),
+                onTap: () async {
+                  var nowTime = DateTime.now();
+                  controlhora_entrada.text = '$nowTime';
+                  horaentrada = nowTime;
+                },
+              ),
+            ),
+            /*Container(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              padding: EdgeInsets.all(20),
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    SizedBox(
+                      height: 20,
+                    ),
+                    DropDownField(
+                      controller: controltipo,
+                      hintText: "Tipo de Vehiculo",
+                      enabled: true,
+                      itemsVisibleInDropdown: 5,
+                      items: ["CARRO", "MOTO"],
+                      onValueChanged: (value) {
+                        setState(() {
+                          seleccionado_1 = value;
+                        });
+                      },
+                    )
+                  ]),
+            ),
+
             TextField(
               controller: controlhora_entrada,
               decoration:
@@ -51,7 +133,7 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
               controller: controlhora_salida,
               decoration:
                   InputDecoration(labelText: 'Ingrese la de hora salida'),
-            ),
+            ),*/
             ElevatedButton(
                 onPressed: () {
                   adicionarParqueo(
@@ -67,5 +149,11 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
         )),
       ),
     );
+  }
+
+  void dropdownCallback(String? selectedValue) {
+    if (selectedValue is String) {
+      setState(() {});
+    }
   }
 }
