@@ -1,4 +1,5 @@
 import 'package:best_parking_app/pages/perfil.dart';
+import 'package:best_parking_app/pages/salidavehiculo.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -79,11 +80,11 @@ class _inicioOperadorState extends State<inicioOperador> {
                       RaisedButton(
                         child: Image.asset('img/icono_salida.png'),
                         onPressed: () {
-                          /*Navigator.push(
+                          Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      ListaMensajeros()));*/
+                                      salidaVehiculo()));
                         },
                       ),
                       SizedBox(height: 10),

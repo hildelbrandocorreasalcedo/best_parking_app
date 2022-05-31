@@ -9,14 +9,14 @@ import 'adicionar.dart';
 
 //---------parqueo
 
-class ListaParqueos extends StatefulWidget {
-  const ListaParqueos({Key? key}) : super(key: key);
+class salidaVehiculo extends StatefulWidget {
+  const salidaVehiculo({Key? key}) : super(key: key);
 
   @override
-  State<ListaParqueos> createState() => _ListaParqueosState();
+  State<salidaVehiculo> createState() => _salidaVehiculoState();
 }
 
-class _ListaParqueosState extends State<ListaParqueos> {
+class _salidaVehiculoState extends State<salidaVehiculo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
