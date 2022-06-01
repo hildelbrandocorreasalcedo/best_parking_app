@@ -54,6 +54,153 @@ class _FacturarPaqueoState extends State<FacturarParqueo> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+        appBar: AppBar(
+          title: Text("Facturar Parqueo"),
+        ),
+        body: ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
+              child: Text(
+                "Retirar Vehiculo",
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30,
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(35, 10, 35, 0),
+              height: 390,
+              width: double.maxFinite,
+              child: Card(
+                elevation: 5,
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    Positioned(
+                      top: 20,
+                      left: (MediaQuery.of(context).size.width / 2) - 135,
+                      child: Container(
+                        //
+                        height: 60,
+                        width: 200,
+                        child: Card(
+                          elevation: 2,
+                          color: Colors.blue[200],
+                          child: Center(
+                            child: Text(
+                              controlplaca.text,
+                              textAlign: TextAlign.center,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 30,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.topCenter,
+                      child: Stack(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 100),
+                            child: Column(
+                              children: [
+                                Text(
+                                  'Tipo de vehiculo:\n' + controltipo.text,
+                                  textAlign: TextAlign.center,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                                Text(
+                                  '\nMarca del vehiculo:\n' + controlmarca.text,
+                                  textAlign: TextAlign.center,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                                Text(
+                                  '\nFecha de entrada:\n' +
+                                      controlhora_entrada.text.substring(0, 10),
+                                  textAlign: TextAlign.center,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                                Text(
+                                  'Hora de entrada:\n' +
+                                      controlhora_entrada.text
+                                          .substring(11, 16),
+                                  textAlign: TextAlign.center,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                                Text(
+                                  '\nTarifa por hora:\n' +
+                                      controlvalorhora.text,
+                                  textAlign: TextAlign.center,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(
+                36,
+                10,
+                36,
+                0,
+              ),
+              child: RaisedButton(
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 0, vertical: 10.0),
+                  child: Text(
+                    'RETIRAR VEHICULO',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                elevation: 10.0,
+                color: Colors.blue.shade400,
+                onPressed: () {},
+              ),
+            )
+          ],
+        ));
+
+    /*Scaffold(
       appBar: AppBar(
         title: Text("Facturar Parqueo"),
       ),
@@ -184,6 +331,6 @@ class _FacturarPaqueoState extends State<FacturarParqueo> {
           ),
         ),
       ),
-    );
+    );*/
   }
 }
