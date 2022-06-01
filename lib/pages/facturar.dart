@@ -40,11 +40,11 @@ class _FacturarPaqueoState extends State<FacturarParqueo> {
         text: widget.perfil[widget.idperfil].hora_entrada);
     controlhora_salida =
         TextEditingController(text: widget.perfil[widget.idperfil].hora_salida);
-    controlhora_salida =
+    controlnumerohoras =
         TextEditingController(text: widget.perfil[widget.idperfil].numerohoras);
-    controlhora_salida =
+    controlvalorhora =
         TextEditingController(text: widget.perfil[widget.idperfil].valorhora);
-    controlhora_salida =
+    controltotalpagar =
         TextEditingController(text: widget.perfil[widget.idperfil].totalpagar);
     // TODO: implement initState
     super.initState();
@@ -162,7 +162,7 @@ class _FacturarPaqueoState extends State<FacturarParqueo> {
               ElevatedButton(
                 child: Text("Facturar Parqueo"),
                 onPressed: () {
-                  editarParqueo(
+                  facturarParqueo(
                     widget.perfil[widget.idperfil].id_parqueo,
                     controltipo.text,
                     controlplaca.text,

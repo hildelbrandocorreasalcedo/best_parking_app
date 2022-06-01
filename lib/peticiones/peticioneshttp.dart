@@ -49,15 +49,12 @@ void adicionarParqueo(
 }
 
 void editarParqueo(
-    String id_parqueo,
-    String tipo,
-    String placa,
-    String marca,
-    String hora_entrada,
-    String hora_salida,
-    String numerohoras,
-    String valorhora,
-    String totalpagar) async {
+  String id_parqueo,
+  String tipo,
+  String placa,
+  String marca,
+  String hora_entrada,
+) async {
   var url = Uri.parse(
       "https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/modificar.php");
 
