@@ -21,8 +21,9 @@ class _ListaParqueosState extends State<ListaParqueos> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-            'Lista de Parqueos'), /*
+        title: Text('Lista de Parqueos'),
+        backgroundColor: Colors.blue.shade400,
+        /*
         actions: [
           IconButton(
               onPressed: () {
