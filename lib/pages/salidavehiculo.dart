@@ -24,22 +24,19 @@ class _salidaVehiculoState extends State<salidaVehiculo> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-            'Salida de vehiculos: Lista de Parqueos'), /*
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (BuildContext context) =>
-                            AgregarParqueo())).then((value) {
-                  setState(() {
-                    getInfo1(context);
-                  });
-                });
-              },
-              icon: Icon(Icons.add))
-        ],*/
+          'SALIDA DE VEHICULOS',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 22,
+          ),
+        ),
+        toolbarHeight: 90,
+        backgroundColor: Colors.blue.shade400,
+        elevation: 14,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(70),
+                bottomLeft: Radius.circular(70))),
       ),
       body: getInfo1(context),
       floatingActionButton: FloatingActionButton(

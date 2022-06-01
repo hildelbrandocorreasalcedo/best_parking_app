@@ -47,51 +47,7 @@ class _inicioOperadorState extends State<inicioOperador> {
                           blurRadius: 7, spreadRadius: 3, color: Colors.pink)
                     ], shape: BoxShape.circle, color: Colors.pink.shade400),
                     child: IconButton(
-                      icon: const Icon(Icons.search),
-                      color: Colors.white,
-                      tooltip: 'Search',
-                      onPressed: () {
-                        setState(() {
-                          Navigator.pop(context);
-                        });
-                      },
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Container(
-                    height: 40,
-                    width: 40,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(boxShadow: [
-                      BoxShadow(
-                          blurRadius: 7, spreadRadius: 3, color: Colors.pink)
-                    ], shape: BoxShape.circle, color: Colors.pink.shade400),
-                    child: IconButton(
-                      icon: const Icon(Icons.notifications),
-                      color: Colors.white,
-                      tooltip: 'Notifications',
-                      onPressed: () {
-                        setState(() {
-                          Navigator.pop(context);
-                        });
-                      },
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Container(
-                    height: 40,
-                    width: 40,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(boxShadow: [
-                      BoxShadow(
-                          blurRadius: 7, spreadRadius: 3, color: Colors.pink)
-                    ], shape: BoxShape.circle, color: Colors.pink.shade400),
-                    child: IconButton(
-                      icon: const Icon(Icons.assignment_return_outlined),
+                      icon: const Icon(Icons.output_outlined),
                       color: Colors.white,
                       tooltip: 'Log-Out',
                       onPressed: () {
@@ -107,7 +63,7 @@ class _inicioOperadorState extends State<inicioOperador> {
                 ],
               ),
             ]),
-        drawer: Drawer(),
+        //drawer: Drawer(),
         body: GridView.count(
           crossAxisCount: 2,
           children: <Widget>[
@@ -130,8 +86,12 @@ class _inicioOperadorState extends State<inicioOperador> {
                       ),
                       SizedBox(height: 10),
                       Text(
-                        'Entrada de vehiculos',
+                        'ENTRADA DE VEHICULOS',
                         textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                        ),
                       )
                     ],
                   ),
@@ -157,8 +117,12 @@ class _inicioOperadorState extends State<inicioOperador> {
                       ),
                       SizedBox(height: 10),
                       Text(
-                        'Salida de Vehiculo',
+                        'SALIDA DE VEHICULOS',
                         textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                        ),
                       )
                     ],
                   ),
@@ -184,8 +148,12 @@ class _inicioOperadorState extends State<inicioOperador> {
                       ),
                       SizedBox(height: 10),
                       Text(
-                        'Consultar Vehiculos',
+                        'CONSULTAR PARQUEOS',
                         textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                        ),
                       )
                     ],
                   ),
@@ -211,8 +179,12 @@ class _inicioOperadorState extends State<inicioOperador> {
                       ),
                       SizedBox(height: 10),
                       Text(
-                        'Consulta Financiera',
+                        'CONSULTA FINANCIERA',
                         textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                        ),
                       )
                     ],
                   ),

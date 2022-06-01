@@ -21,24 +21,20 @@ class _ListaParqueosState extends State<ListaParqueos> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lista de Parqueos'),
+        title: Text(
+          'LISTADO DE PARQUEOS',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 22,
+          ),
+        ),
+        toolbarHeight: 90,
         backgroundColor: Colors.blue.shade400,
-        /*
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (BuildContext context) =>
-                            AgregarParqueo())).then((value) {
-                  setState(() {
-                    getInfo1(context);
-                  });
-                });
-              },
-              icon: Icon(Icons.add))
-        ],*/
+        elevation: 14,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(70),
+                bottomLeft: Radius.circular(70))),
       ),
       body: getInfo1(context),
       floatingActionButton: FloatingActionButton(

@@ -134,14 +134,25 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Adicionar Parqueo'),
+          title: Text(
+            'PARQUEO DE VEHICULOS',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 22,
+            ),
+          ),
+          toolbarHeight: 90,
           backgroundColor: Colors.blue.shade400,
+          elevation: 14,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(70),
+                  bottomLeft: Radius.circular(70))),
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 30.0),
                 child: TextField(
