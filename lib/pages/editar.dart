@@ -127,10 +127,6 @@ class _ModificarPaqueoState extends State<ModificarParqueo> {
                     controlplaca.text,
                     controlmarca.text,
                     controlhora_entrada.text,
-                    controlhora_salida.text,
-                    controlnumerohoras.text,
-                    controlvalorhora.text,
-                    controltotalpagar.text,
                   );
                   Navigator.push(
                       context,
