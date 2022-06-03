@@ -19,6 +19,7 @@ class _ModificarPaqueoState extends State<ModificarParqueo> {
   TextEditingController controlmarca = TextEditingController();
   TextEditingController controlhora_entrada = TextEditingController();
   TextEditingController controlhora_salida = TextEditingController();
+  TextEditingController controlestado = TextEditingController();
   TextEditingController controlnumerohoras = TextEditingController();
   TextEditingController controlvalorhora = TextEditingController();
   TextEditingController controltotalpagar = TextEditingController();
@@ -31,12 +32,20 @@ class _ModificarPaqueoState extends State<ModificarParqueo> {
         TextEditingController(text: widget.perfil[widget.idperfil].tipo);
     controlplaca =
         TextEditingController(text: widget.perfil[widget.idperfil].placa);
-    controlplaca =
-        TextEditingController(text: widget.perfil[widget.idperfil].placa);
     controlmarca =
         TextEditingController(text: widget.perfil[widget.idperfil].marca);
     controlhora_entrada = TextEditingController(
         text: widget.perfil[widget.idperfil].hora_entrada);
+    controlhora_salida =
+        TextEditingController(text: widget.perfil[widget.idperfil].hora_salida);
+    controlestado =
+        TextEditingController(text: widget.perfil[widget.idperfil].estado);
+    controlnumerohoras =
+        TextEditingController(text: widget.perfil[widget.idperfil].numerohoras);
+    controlvalorhora =
+        TextEditingController(text: widget.perfil[widget.idperfil].valorhora);
+    controltotalpagar =
+        TextEditingController(text: widget.perfil[widget.idperfil].totalpagar);
     // TODO: implement initState
     super.initState();
   }
@@ -98,26 +107,6 @@ class _ModificarPaqueoState extends State<ModificarParqueo> {
                   onChanged: (value) {},
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.all(15.0),
-                child: TextField(
-                  controller: controlhora_entrada,
-                  decoration: InputDecoration(
-                      filled: true,
-                      labelText: 'Hora de entrada  ',
-                      suffix: GestureDetector(
-                        child: Icon(Icons.close),
-                        onTap: () {
-                          controlhora_entrada.clear();
-                        },
-                      )),
-                  onTap: () async {
-                    var nowTime = DateTime.now();
-                    controlhora_entrada.text = '$nowTime';
-                    horaentrada = nowTime;
-                  },
-                ),
-              ),
               ElevatedButton(
                 child: Text("Modificar Parqueo"),
                 onPressed: () {
@@ -127,6 +116,11 @@ class _ModificarPaqueoState extends State<ModificarParqueo> {
                     controlplaca.text,
                     controlmarca.text,
                     controlhora_entrada.text,
+                    controlhora_salida.text,
+                    controlestado.text,
+                    controlnumerohoras.text,
+                    controlvalorhora.text,
+                    controltotalpagar.text,
                   );
                   Navigator.push(
                       context,

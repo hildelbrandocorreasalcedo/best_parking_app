@@ -67,6 +67,11 @@ void editarParqueo(
   String placa,
   String marca,
   String hora_entrada,
+  String hora_salida,
+  String estado,
+  String numerohoras,
+  String valorhora,
+  String totalpagar,
 ) async {
   var url = Uri.parse(
       "https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/modificar.php");
@@ -77,6 +82,11 @@ void editarParqueo(
     'placa': placa,
     'marca': marca,
     'hora_entrada': hora_entrada,
+    'hora_salida': hora_salida,
+    'estado': estado,
+    'numerohoras': numerohoras,
+    'valorhora': valorhora,
+    'totalpagar': totalpagar,
   });
 }
 
