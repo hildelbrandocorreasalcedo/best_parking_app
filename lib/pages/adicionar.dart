@@ -133,7 +133,7 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                   onChanged: (String? newValue) {
                     setState(() {
                       selectedValue2 = newValue!;
-                      controltipo.text = newValue;
+                      controlmarca.text = newValue;
                     });
                   },
                   items: <String>[
@@ -192,7 +192,7 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                             'SELECCIONAR MARCA VEHICULO') {
                       var nowTime = DateTime.now();
                       horaentrada = nowTime;
-                      if (controltipo.text == "CARRO") {
+                      if (controltipo.text == 'CARRO') {
                         controlvalorhora.text = "2000";
                       } else {
                         controlvalorhora.text = "1000";

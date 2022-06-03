@@ -289,10 +289,32 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
                   controlvalorhora.text,
                   controltotalpagar.text,
                 );
-                Navigator.push(
+
+                Navigator.of(context).pop();
+
+                showDialog(
+                    context: context,
+                    builder: (_) => AlertDialog(
+                          content: Text(
+                            controlplaca.text +
+                                "\n\n\nNumero de horas:\n" +
+                                controlnumerohoras.text +
+                                "\n\n Valor por hora:\n" +
+                                controlvalorhora.text +
+                                "\n\n\n Total a pagar:\n" +
+                                controltotalpagar.text,
+                            textAlign: TextAlign.center,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ));
+                /*Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => salidaVehiculo()));
+                        builder: (BuildContext context) => salidaVehiculo()));*/
                 //super.initState();
               },
             ),
