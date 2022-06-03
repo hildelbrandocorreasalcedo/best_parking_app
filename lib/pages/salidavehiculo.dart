@@ -104,35 +104,46 @@ class VistaParqueos extends StatelessWidget {
                           builder: (BuildContext context) => RetirarVehiculo(
                                 perfil: parqueos,
                                 idperfil: posicion,
-                              ))).then((value) => {
-                        showDialog(
-                            context: context,
-                            builder: (_) => AlertDialog(
-                                  content: Text('Agregado correctamente'),
-                                )),
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    RetirarVehiculo(
-                                      perfil: parqueos,
-                                      idperfil: posicion,
-                                    )))
-                      });
+                              )));
                 },
                 leading: Container(
                   padding: EdgeInsets.all(5),
                   width: 50,
                   height: 50,
-                  //child: Image.network(parqueos[posicion].Foto),
+                  child: Icon(parqueos[posicion].tipo == "CARRO"
+                      ? Icons.car_repair
+                      : Icons.motorcycle_outlined),
                 ),
-                title: Text('Placa: ' + parqueos[posicion].placa),
-                subtitle: Text('tipo: ' + parqueos[posicion].tipo),
+                title: Text(
+                  parqueos[posicion].placa,
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25,
+                  ),
+                ),
+                subtitle: Text(
+                  parqueos[posicion].tipo,
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 trailing: Container(
-                    width: 80,
-                    height: 40,
-                    /*color: Colors.yellow,*/
-                    child: Text('Estado: ' + parqueos[posicion].estado)),
+                  width: 20,
+                  /*color: Colors.yellow,*/
+                  child: Column(
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: parqueos[posicion].estado == 'ACTIVO'
+                            ? Colors.green
+                            : Colors.red,
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
           );

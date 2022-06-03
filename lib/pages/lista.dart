@@ -112,8 +112,23 @@ class VistaParqueos extends StatelessWidget {
                         ? Icons.car_repair
                         : Icons.motorcycle_outlined),
                   ),
-                  title: Text('Placa: ' + parqueos[posicion].placa),
-                  subtitle: Text('Tipo: ' + parqueos[posicion].tipo),
+                  title: Text(
+                    parqueos[posicion].placa,
+                    textAlign: TextAlign.center,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  ),
+                  subtitle: Text(
+                    parqueos[posicion].tipo,
+                    textAlign: TextAlign.center,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   trailing: Container(
                     width: 20,
                     /*color: Colors.yellow,*/

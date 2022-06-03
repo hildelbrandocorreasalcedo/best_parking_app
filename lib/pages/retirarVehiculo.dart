@@ -10,6 +10,7 @@ import 'package:best_parking_app/pages/adicionar.dart';
 import '../peticiones/peticioneshttp.dart';
 import 'facturar.dart';
 import 'lista.dart';
+import 'salidavehiculo.dart';
 
 class RetirarVehiculo extends StatefulWidget {
   final idperfil;
@@ -288,7 +289,10 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
                   controlvalorhora.text,
                   controltotalpagar.text,
                 );
-                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => salidaVehiculo()));
                 //super.initState();
               },
             ),
