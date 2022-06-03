@@ -131,7 +131,7 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
                 child: MaterialButton(
-                  minWidth: 200.0,
+                  minWidth: 400.0,
                   height: 60.0,
                   onPressed: () {
                     if (controltipo.text.isNotEmpty &&
