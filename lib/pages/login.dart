@@ -1,3 +1,5 @@
+// ignore_for_file: sort_child_properties_last, prefer_const_constructors
+
 import 'package:best_parking_app/pages/adicionar.dart';
 import 'package:best_parking_app/pages/inicioOperador.dart';
 import 'package:best_parking_app/peticiones/peticioneshttp.dart';
@@ -128,8 +130,11 @@ class _LoginPageState extends State<LoginPage> {
       return RaisedButton(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 80.0, vertical: 15.0),
+          width: 300,
+          height: 50,
           child: Text(
             'INICIAR SESION',
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 16.0,
               fontWeight: FontWeight.bold,

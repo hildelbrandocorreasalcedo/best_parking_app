@@ -25,7 +25,8 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
   TextEditingController controlvalorhora = TextEditingController();
   TextEditingController controltotalpagar = TextEditingController();
 
-  String selectedValue = 'SELECCIONAR';
+  String selectedValue1 = 'SELECCIONAR TIPO VEHICULO';
+  String selectedValue2 = 'SELECCIONAR MARCA VEHICULO';
   String seleccionado_1 = "";
   late DateTime? horaentrada;
 
@@ -53,36 +54,6 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              DropdownButtonFormField(
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue, width: 2),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue, width: 2),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  filled: true,
-                  fillColor: Colors.blueAccent,
-                ),
-                validator: (value) => value == null ? "Select a country" : null,
-                dropdownColor: Colors.blueAccent,
-                value: selectedValue,
-                onChanged: (String? newValue) {
-                  setState(() {
-                    selectedValue = newValue!;
-                    controltipo.text = newValue;
-                  });
-                },
-                items: <String>['SELECCIONAR', 'CARRO', 'MOTO']
-                    .map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
-              ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 30.0),
                 child: TextField(
@@ -98,6 +69,86 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                   onChanged: (value) {},
                 ),
               ),
+              SizedBox(
+                height: 15.0,
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 30.0),
+                child: DropdownButtonFormField(
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.blue, width: 2),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.blue, width: 2),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    filled: true,
+                    fillColor: Colors.blueAccent,
+                  ),
+                  validator: (value) =>
+                      value == null ? "Select a country" : null,
+                  dropdownColor: Colors.blueAccent,
+                  style: TextStyle(color: Colors.white, fontSize: 15),
+                  value: selectedValue1,
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      selectedValue1 = newValue!;
+                      controltipo.text = newValue;
+                    });
+                  },
+                  items: <String>['SELECCIONAR TIPO VEHICULO', 'CARRO', 'MOTO']
+                      .map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                ),
+              ),
+              SizedBox(
+                height: 15.0,
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 30.0),
+                child: DropdownButtonFormField(
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.blue, width: 2),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.blue, width: 2),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    filled: true,
+                    fillColor: Colors.blueAccent,
+                  ),
+                  validator: (value) =>
+                      value == null ? "Select a country" : null,
+                  dropdownColor: Colors.blueAccent,
+                  style: TextStyle(color: Colors.white, fontSize: 15),
+                  value: selectedValue2,
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      selectedValue2 = newValue!;
+                      controltipo.text = newValue;
+                    });
+                  },
+                  items: <String>[
+                    'SELECCIONAR MARCA VEHICULO',
+                    'MAZDA',
+                    'TOYOTA'
+                  ].map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                ),
+              ),
+
               /* Container(
                 padding: EdgeInsets.symmetric(horizontal: 30.0),
                 child: TextField(
@@ -112,7 +163,7 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                       labelText: 'Tipo del vehiculo'),
                   onChanged: (value) {},
                 ),
-              ),*/
+              ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 30.0),
                 child: TextField(
@@ -127,16 +178,18 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                       labelText: 'Marca del vehiculo'),
                   onChanged: (value) {},
                 ),
-              ),
+              ),*/
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
                 child: MaterialButton(
                   minWidth: 400.0,
                   height: 60.0,
                   onPressed: () {
-                    if (controltipo.text.isNotEmpty &&
+                    if (selectedValue1.toString() !=
+                            'SELECCIONAR TIPO VEHICULO' &&
                         controlplaca.text.isNotEmpty &&
-                        controlmarca.text.isNotEmpty) {
+                        selectedValue2.toString() !=
+                            'SELECCIONAR MARCA VEHICULO') {
                       var nowTime = DateTime.now();
                       horaentrada = nowTime;
                       if (controltipo.text == "CARRO") {
@@ -146,9 +199,9 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                       }
 
                       adicionarParqueo(
-                        selectedValue.toString(),
+                        selectedValue1.toString(),
                         controlplaca.text,
-                        controlmarca.text,
+                        selectedValue2.toString(),
                         horaentrada.toString(),
                         controlhora_salida.text,
                         controlestado.text = "ACTIVO",
@@ -172,7 +225,7 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                     }
                   },
                   color: Colors.lightBlue,
-                  child: Text('Registrar',
+                  child: Text('REGISTRAR',
                       style: TextStyle(color: Colors.white, fontSize: 20)),
                 ),
               ),
