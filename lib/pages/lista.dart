@@ -6,6 +6,7 @@ import '../models/parqueo.dart';
 import '../models/vehiculo.dart';
 import '../peticiones/peticioneshttp.dart';
 import 'adicionar.dart';
+import 'inicioOperador.dart';
 
 //---------parqueo
 
@@ -21,21 +22,53 @@ class _ListaParqueosState extends State<ListaParqueos> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'LISTADO DE PARQUEOS',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 22,
+          title: Text(
+            'LISTADO DE PARQUEOS',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 22,
+            ),
           ),
-        ),
-        toolbarHeight: 90,
-        backgroundColor: Colors.blue.shade400,
-        elevation: 14,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(70),
-                bottomLeft: Radius.circular(70))),
-      ),
+          toolbarHeight: 90,
+          backgroundColor: Colors.blue.shade400,
+          elevation: 14,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(70),
+                  bottomLeft: Radius.circular(70))),
+          actions: [
+            Row(
+              children: [
+                Container(
+                  height: 40,
+                  width: 40,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(boxShadow: [
+                    BoxShadow(
+                        blurRadius: 7, spreadRadius: 3, color: Colors.pink)
+                  ], shape: BoxShape.circle, color: Colors.pink.shade400),
+                  child: IconButton(
+                    icon: const Icon(Icons.home),
+                    color: Colors.white,
+                    tooltip: 'Inicio',
+                    onPressed: () {
+                      setState(() {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  inicioOperador(title: 'Usuarios'),
+                            ));
+                      });
+                    },
+                  ),
+                ),
+                SizedBox(
+                  width: 26,
+                )
+              ],
+            ),
+          ]),
       body: getInfo1(context),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
