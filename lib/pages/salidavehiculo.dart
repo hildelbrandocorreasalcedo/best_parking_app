@@ -1,5 +1,5 @@
 import 'package:best_parking_app/models/factura.dart';
-import 'package:best_parking_app/pages/facturar.dart';
+import 'package:best_parking_app/pages/retirarVehiculo.dart';
 import 'package:best_parking_app/pages/perfil.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -101,7 +101,7 @@ class VistaParqueos extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (BuildContext context) => FacturarParqueo(
+                          builder: (BuildContext context) => RetirarVehiculo(
                                 perfil: parqueos,
                                 idperfil: posicion,
                               )));

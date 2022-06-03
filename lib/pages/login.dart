@@ -23,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   void initState() {
-    controladorUsuario = TextEditingController(text: 'admin');
+    controladorUsuario = TextEditingController(text: 'operario');
     controladorClave = TextEditingController(text: '123');
   }
 
