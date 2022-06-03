@@ -17,6 +17,17 @@ Future<List<Parqueo>> listaParqueos(http.Client client) async {
   return compute(pasaraListas, response.body);
 }
 
+Future<List<Parqueo>> listaParqueosActivos(http.Client client) async {
+  //final response =
+  //    await client.get('https://desarolloweb2021a.000webhostapp.com/API/listarnotas.php');
+  //var id = "2";
+  final response = await client.get(Uri.parse(
+      'https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/listarActivos.php'));
+
+  // Usa la función compute para ejecutar parsePhotos en un isolate separado
+  return compute(pasaraListas, response.body);
+}
+
 // Una función que convierte el body de la respuesta en un List<Photo>
 List<Parqueo> pasaraListas(String responseBody) {
   final pasar = json.decode(responseBody).cast<Map<String, dynamic>>();
