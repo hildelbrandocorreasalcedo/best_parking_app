@@ -25,6 +25,7 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
   TextEditingController controlvalorhora = TextEditingController();
   TextEditingController controltotalpagar = TextEditingController();
 
+  String selectedValue = 'SELECCIONAR';
   String seleccionado_1 = "";
   late DateTime? horaentrada;
 
@@ -52,6 +53,36 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              DropdownButtonFormField(
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.blue, width: 2),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.blue, width: 2),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  filled: true,
+                  fillColor: Colors.blueAccent,
+                ),
+                validator: (value) => value == null ? "Select a country" : null,
+                dropdownColor: Colors.blueAccent,
+                value: selectedValue,
+                onChanged: (String? newValue) {
+                  setState(() {
+                    selectedValue = newValue!;
+                    controltipo.text = newValue;
+                  });
+                },
+                items: <String>['SELECCIONAR', 'CARRO', 'MOTO']
+                    .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 30.0),
                 child: TextField(
@@ -67,7 +98,7 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                   onChanged: (value) {},
                 ),
               ),
-              Container(
+              /* Container(
                 padding: EdgeInsets.symmetric(horizontal: 30.0),
                 child: TextField(
                   cursorColor: Colors.red.shade400,
@@ -81,7 +112,7 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                       labelText: 'Tipo del vehiculo'),
                   onChanged: (value) {},
                 ),
-              ),
+              ),*/
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 30.0),
                 child: TextField(
@@ -115,7 +146,7 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                       }
 
                       adicionarParqueo(
-                        controltipo.text,
+                        selectedValue.toString(),
                         controlplaca.text,
                         controlmarca.text,
                         horaentrada.toString(),
