@@ -30,6 +30,7 @@ void adicionarParqueo(
     String marca,
     String hora_entrada,
     String hora_salida,
+    String estado,
     String numerohoras,
     String valorhora,
     String totalpagar) async {
@@ -42,6 +43,7 @@ void adicionarParqueo(
     'marca': marca,
     'hora_entrada': hora_entrada,
     'hora_salida': hora_salida,
+    'estado': estado,
     'numerohoras': numerohoras,
     'valorhora': valorhora,
     'totalpagar': totalpagar,
@@ -83,6 +85,7 @@ void facturarParqueo(
     String marca,
     String hora_entrada,
     String hora_salida,
+    String estado,
     String numerohoras,
     String valorhora,
     String totalpagar) async {
@@ -96,6 +99,7 @@ void facturarParqueo(
     'marca': marca,
     'hora_entrada': hora_entrada,
     'hora_salida': hora_salida,
+    'estado': estado,
     'numerohoras': numerohoras,
     'valorhora': valorhora,
     'totalpagar': totalpagar,

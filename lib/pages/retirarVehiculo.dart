@@ -22,6 +22,7 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
   TextEditingController controlmarca = TextEditingController();
   TextEditingController controlhora_entrada = TextEditingController();
   TextEditingController controlhora_salida = TextEditingController();
+  TextEditingController controlestado = TextEditingController();
   TextEditingController controlnumerohoras = TextEditingController();
   TextEditingController controlvalorhora = TextEditingController();
   TextEditingController controltotalpagar = TextEditingController();
@@ -43,6 +44,8 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
         text: widget.perfil[widget.idperfil].hora_entrada);
     controlhora_salida =
         TextEditingController(text: widget.perfil[widget.idperfil].hora_salida);
+    controlestado =
+        TextEditingController(text: widget.perfil[widget.idperfil].estado);
     controlnumerohoras =
         TextEditingController(text: widget.perfil[widget.idperfil].numerohoras);
     controlvalorhora =
@@ -76,7 +79,7 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
             ),
             Container(
               padding: EdgeInsets.fromLTRB(35, 10, 35, 0),
-              height: 610,
+              height: 690,
               width: double.maxFinite,
               child: Card(
                 elevation: 5,
@@ -214,6 +217,15 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
                                     fontSize: 15,
                                   ),
                                 ),
+                                Text(
+                                  '\nEstado:\n' + controlestado.text,
+                                  textAlign: TextAlign.center,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                  ),
+                                ),
                               ],
                             ),
                           )
@@ -262,6 +274,7 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
                   controltotalpagar.text =
                       calcularValorPagar(horaentrada, horasalida, tarifa)
                           .toString();
+                  controlestado.text = "INACTIVO";
 
                   facturarParqueo(
                     widget.perfil[widget.idperfil].id_parqueo,
@@ -270,6 +283,7 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
                     controlmarca.text,
                     controlhora_entrada.text,
                     controlhora_salida.text,
+                    controlestado.text,
                     controlnumerohoras.text,
                     controlvalorhora.text,
                     controltotalpagar.text,
@@ -292,6 +306,8 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
           .add(Duration(hours: hora_salida.hour, minutes: hora_salida.minute));
       HorasDiferencia = RestaTiempo.hour;
       MinutosDiferencia = RestaTiempo.minute;
+      print(HorasDiferencia);
+      print(MinutosDiferencia);
 
       if (HorasDiferencia < 1) {
         HorasDiferencia = 1;

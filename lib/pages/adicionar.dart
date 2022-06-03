@@ -20,6 +20,7 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
   TextEditingController controlmarca = TextEditingController();
   TextEditingController controlhora_entrada = TextEditingController();
   TextEditingController controlhora_salida = TextEditingController();
+  TextEditingController controlestado = TextEditingController();
   TextEditingController controlnumerohoras = TextEditingController();
   TextEditingController controlvalorhora = TextEditingController();
   TextEditingController controltotalpagar = TextEditingController();
@@ -112,12 +113,14 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                       } else {
                         controlvalorhora.text = "1000";
                       }
+
                       adicionarParqueo(
                         controltipo.text,
                         controlplaca.text,
                         controlmarca.text,
                         horaentrada.toString(),
                         controlhora_salida.text,
+                        controlestado.text = "ACTIVO",
                         controlnumerohoras.text,
                         controlvalorhora.text,
                         controltotalpagar.text,
