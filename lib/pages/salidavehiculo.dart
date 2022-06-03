@@ -53,7 +53,7 @@ class _salidaVehiculoState extends State<salidaVehiculo> {
 
 Widget getInfo1(BuildContext context) {
   return FutureBuilder(
-      future: listaParqueos(http.Client()),
+      future: listaParqueosActivos(http.Client()),
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.waiting:
@@ -104,7 +104,21 @@ class VistaParqueos extends StatelessWidget {
                           builder: (BuildContext context) => RetirarVehiculo(
                                 perfil: parqueos,
                                 idperfil: posicion,
-                              )));
+                              ))).then((value) => {
+                        showDialog(
+                            context: context,
+                            builder: (_) => AlertDialog(
+                                  content: Text('Agregado correctamente'),
+                                )),
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    RetirarVehiculo(
+                                      perfil: parqueos,
+                                      idperfil: posicion,
+                                    )))
+                      });
                 },
                 leading: Container(
                   padding: EdgeInsets.all(5),

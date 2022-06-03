@@ -288,7 +288,7 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
                   controlvalorhora.text,
                   controltotalpagar.text,
                 );
-
+                Navigator.pop(context);
                 //super.initState();
               },
             ),
