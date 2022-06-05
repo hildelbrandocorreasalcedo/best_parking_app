@@ -30,6 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  curved_navigation_bar: ^1.0.3
   http: 
   get: ^4.6.5
 
@@ -61,6 +62,7 @@ flutter:
     - img/icono_consulta.png
     - img/icono_financiero.png
     - img/fondoParking.jpg
+    - img/icono.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

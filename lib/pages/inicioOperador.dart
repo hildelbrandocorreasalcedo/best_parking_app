@@ -21,16 +21,46 @@ class _inicioOperadorState extends State<inicioOperador> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-            title: Text(
+            /*title: Text(
               'GESTION DE PARQUEOS',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 22,
               ),
+            ),*/
+            title: Image.asset('img/Icono.png', scale: 3),
+            leading: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 40,
+                  width: 40,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(boxShadow: [
+                    BoxShadow(
+                        blurRadius: 7, spreadRadius: 3, color: Colors.white)
+                  ], shape: BoxShape.circle, color: Colors.white),
+                  child: IconButton(
+                    iconSize: 25,
+                    icon: const Icon(Icons.home),
+                    color: Colors.blue.shade400,
+                    tooltip: 'Salir',
+                    onPressed: () {
+                      setState(() {
+                        Navigator.pop(context);
+                      });
+                    },
+                  ),
+                ),
+                SizedBox(
+                  width: 26,
+                )
+              ],
             ),
-            toolbarHeight: 90,
+            centerTitle: true,
+            toolbarHeight: 60,
             backgroundColor: Colors.blue.shade400,
-            elevation: 14,
+            //elevation: 14,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(70),
@@ -44,12 +74,12 @@ class _inicioOperadorState extends State<inicioOperador> {
                     alignment: Alignment.center,
                     decoration: BoxDecoration(boxShadow: [
                       BoxShadow(
-                          blurRadius: 7, spreadRadius: 3, color: Colors.pink)
-                    ], shape: BoxShape.circle, color: Colors.pink.shade400),
+                          blurRadius: 7, spreadRadius: 3, color: Colors.white)
+                    ], shape: BoxShape.circle, color: Colors.white),
                     child: IconButton(
                       icon: const Icon(Icons.output_outlined),
-                      color: Colors.white,
-                      tooltip: 'Log-Out',
+                      color: Colors.blue.shade400,
+                      tooltip: 'Salir',
                       onPressed: () {
                         setState(() {
                           Navigator.pop(context);
