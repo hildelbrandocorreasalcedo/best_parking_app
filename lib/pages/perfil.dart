@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:best_parking_app/pages/login.dart';
 import 'package:flutter/material.dart';
 
@@ -125,12 +127,13 @@ class Perfilparqueo extends StatelessWidget {
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 30,
+                fontFamily: 'Prompt',
               ),
             ),
           ),
           Container(
             padding: EdgeInsets.fromLTRB(35, 10, 35, 0),
-            height: 690,
+            height: 730,
             width: double.maxFinite,
             child: Card(
               elevation: 5,
@@ -155,6 +158,7 @@ class Perfilparqueo extends StatelessWidget {
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 30,
+                              fontFamily: 'Prompt',
                             ),
                           ),
                         ),
@@ -176,6 +180,7 @@ class Perfilparqueo extends StatelessWidget {
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
+                                  fontFamily: 'Prompt',
                                 ),
                               ),
                               Text(
@@ -186,6 +191,7 @@ class Perfilparqueo extends StatelessWidget {
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
+                                  fontFamily: 'Prompt',
                                 ),
                               ),
                               Text(
@@ -198,6 +204,7 @@ class Perfilparqueo extends StatelessWidget {
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
+                                  fontFamily: 'Prompt',
                                 ),
                               ),
                               Text(
@@ -210,6 +217,7 @@ class Perfilparqueo extends StatelessWidget {
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
+                                  fontFamily: 'Prompt',
                                 ),
                               ),
                               Text(
@@ -224,6 +232,7 @@ class Perfilparqueo extends StatelessWidget {
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
+                                  fontFamily: 'Prompt',
                                 ),
                               ),
                               Text(
@@ -238,6 +247,7 @@ class Perfilparqueo extends StatelessWidget {
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
+                                  fontFamily: 'Prompt',
                                 ),
                               ),
                               Text(
@@ -250,6 +260,7 @@ class Perfilparqueo extends StatelessWidget {
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
+                                  fontFamily: 'Prompt',
                                 ),
                               ),
                               Text(
@@ -260,6 +271,7 @@ class Perfilparqueo extends StatelessWidget {
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
+                                  fontFamily: 'Prompt',
                                 ),
                               ),
                               Text(
@@ -272,6 +284,7 @@ class Perfilparqueo extends StatelessWidget {
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
+                                  fontFamily: 'Prompt',
                                 ),
                               ),
                               Text(
@@ -281,6 +294,7 @@ class Perfilparqueo extends StatelessWidget {
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
+                                  fontFamily: 'Prompt',
                                 ),
                               ),
                             ],

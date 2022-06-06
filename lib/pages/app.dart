@@ -1,3 +1,4 @@
+import 'package:best_parking_app/pages/adicionar.dart';
 import 'package:best_parking_app/pages/lista.dart';
 import 'package:flutter/material.dart';
 import 'login.dart';
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'BestParkingAPP',
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        fontFamily: 'Prompt',
       ),
       initialRoute: LoginPage.id,
       routes: {

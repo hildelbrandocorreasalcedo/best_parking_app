@@ -40,7 +40,7 @@ Widget getInfo1(BuildContext context) {
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.waiting:
-            return CircularProgressIndicator();
+            return Center(child: CircularProgressIndicator());
 
           case ConnectionState.done:
             return snapshot.data != null
@@ -102,17 +102,16 @@ class VistaParqueos extends StatelessWidget {
                     textAlign: TextAlign.center,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25,
+                        fontFamily: 'Prompt'),
                   ),
                   subtitle: Text(
                     parqueos[posicion].tipo,
                     textAlign: TextAlign.center,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+                        fontWeight: FontWeight.bold, fontFamily: 'Prompt'),
                   ),
                   trailing: Container(
                     width: 20,

@@ -94,3 +94,15 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: fonts/Nunito-Italic-VariableFont_wght.ttf
+        - asset: fonts/Nunito-VariableFont_wght.ttf
+          style: italic 
+    - family: HeadlandOne
+      fonts:
+        - asset: fonts/HeadlandOne-Regular.ttf
+    - family: Prompt
+      fonts: 
+        - asset: fonts/Prompt-Light.ttf

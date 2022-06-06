@@ -38,13 +38,12 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Flexible(
                 child: CircleAvatar(
-                  child: Image(
-                    image: NetworkImage(
-                        'https://cdn-icons-png.flaticon.com/512/64/64572.png'),
-                    height: 200,
+                  child: Image.asset(
+                    'img/Icono.png',
+                    scale: 1.5,
                   ),
-                  radius: 60.0,
-                  backgroundColor: Colors.white,
+                  radius: 80.0,
+                  backgroundColor: Colors.blue.shade400,
                 ),
               ),
               SizedBox(

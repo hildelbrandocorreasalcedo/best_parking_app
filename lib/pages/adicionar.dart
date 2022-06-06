@@ -27,8 +27,8 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
   TextEditingController controlvalorhora = TextEditingController();
   TextEditingController controltotalpagar = TextEditingController();
 
-  String selectedValue1 = 'SELECCIONAR TIPO VEHICULO';
-  String selectedValue2 = 'SELECCIONAR MARCA VEHICULO';
+  String selectedValue1 = 'Tipo vehiculo';
+  String selectedValue2 = 'Marca vehiculo';
   String seleccionado_1 = "";
   late DateTime? horaentrada;
 
@@ -46,11 +46,12 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                   cursorColor: Colors.red.shade400,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 20,
+                    fontSize: 15,
+                    fontFamily: 'Prompt',
                   ),
                   controller: controlplaca,
                   decoration: InputDecoration(
-                      icon: Icon(Icons.account_box),
+                      icon: Icon(Icons.text_fields_sharp),
                       labelText: 'Placa del vehiculo'),
                   onChanged: (value) {},
                 ),
@@ -71,12 +72,15 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     filled: true,
-                    fillColor: Colors.blueAccent,
+                    fillColor: Colors.transparent,
                   ),
                   validator: (value) =>
                       value == null ? "Select a country" : null,
-                  dropdownColor: Colors.blueAccent,
-                  style: TextStyle(color: Colors.white, fontSize: 15),
+                  dropdownColor: Colors.white,
+                  style: TextStyle(
+                      color: Colors.blue.shade400,
+                      fontSize: 15,
+                      fontFamily: 'Prompt'),
                   value: selectedValue1,
                   onChanged: (String? newValue) {
                     setState(() {
@@ -84,7 +88,7 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                       controltipo.text = newValue;
                     });
                   },
-                  items: <String>['SELECCIONAR TIPO VEHICULO', 'CARRO', 'MOTO']
+                  items: <String>['Tipo vehiculo', 'CARRO', 'MOTO']
                       .map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
@@ -109,12 +113,15 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     filled: true,
-                    fillColor: Colors.blueAccent,
+                    fillColor: Colors.transparent,
                   ),
                   validator: (value) =>
-                      value == null ? "Select a country" : null,
-                  dropdownColor: Colors.blueAccent,
-                  style: TextStyle(color: Colors.white, fontSize: 15),
+                      value == null ? "Seleccione una Marca" : null,
+                  dropdownColor: Colors.white,
+                  style: TextStyle(
+                      color: Colors.blue.shade400,
+                      fontSize: 15,
+                      fontFamily: 'Prompt'),
                   value: selectedValue2,
                   onChanged: (String? newValue) {
                     setState(() {
@@ -122,11 +129,8 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                       controlmarca.text = newValue;
                     });
                   },
-                  items: <String>[
-                    'SELECCIONAR MARCA VEHICULO',
-                    'MAZDA',
-                    'TOYOTA'
-                  ].map<DropdownMenuItem<String>>((String value) {
+                  items: <String>['Marca vehiculo', 'MAZDA', 'TOYOTA']
+                      .map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
                       child: Text(value),
@@ -215,8 +219,11 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                     }
                   },
                   color: Colors.lightBlue,
-                  child: Text('REGISTRAR',
-                      style: TextStyle(color: Colors.white, fontSize: 20)),
+                  child: Text('Registrar',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontFamily: 'Prompt')),
                 ),
               ),
             ],

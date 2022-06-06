@@ -153,6 +153,7 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 30,
+                fontFamily: 'Prompt',
               ),
             ),
           ),
@@ -183,6 +184,7 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 30,
+                              fontFamily: 'Prompt',
                             ),
                           ),
                         ),
@@ -204,6 +206,7 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
+                                  fontFamily: 'Prompt',
                                 ),
                               ),
                               Text(
@@ -213,6 +216,7 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
+                                  fontFamily: 'Prompt',
                                 ),
                               ),
                               Text(
@@ -223,6 +227,7 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
+                                  fontFamily: 'Prompt',
                                 ),
                               ),
                               Text(
@@ -233,6 +238,7 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
+                                  fontFamily: 'Prompt',
                                 ),
                               ),
                               Text(
@@ -245,6 +251,7 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
+                                  fontFamily: 'Prompt',
                                 ),
                               ),
                               Text(
@@ -258,6 +265,7 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
+                                  fontFamily: 'Prompt',
                                 ),
                               ),
                               Text(
@@ -270,6 +278,7 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
+                                  fontFamily: 'Prompt',
                                 ),
                               ),
                               Text(
@@ -279,6 +288,7 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
+                                  fontFamily: 'Prompt',
                                 ),
                               ),
                               Text(
@@ -291,15 +301,7 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
-                                ),
-                              ),
-                              Text(
-                                '\nEstado:\n' + controlestado.text,
-                                textAlign: TextAlign.center,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15,
+                                  fontFamily: 'Prompt',
                                 ),
                               ),
                             ],
@@ -328,6 +330,7 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
                     fontSize: 16.0,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
+                    fontFamily: 'Prompt',
                   ),
                 ),
               ),
@@ -382,6 +385,7 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
+                              fontFamily: 'Prompt',
                             ),
                           ),
                         ));
