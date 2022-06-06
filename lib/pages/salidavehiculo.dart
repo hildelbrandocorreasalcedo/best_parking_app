@@ -22,22 +22,6 @@ class _salidaVehiculoState extends State<salidaVehiculo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'SALIDA DE VEHICULOS',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 22,
-          ),
-        ),
-        toolbarHeight: 90,
-        backgroundColor: Colors.blue.shade400,
-        elevation: 14,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(70),
-                bottomLeft: Radius.circular(70))),
-      ),
       body: getInfo1(context),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

@@ -1,22 +1,55 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
+import 'package:best_parking_app/pages/login.dart';
 import 'package:best_parking_app/pages/perfil.dart';
 import 'package:best_parking_app/pages/salidavehiculo.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 import '../peticiones/peticioneshttp.dart';
 import 'adicionar.dart';
 import 'lista.dart';
 
 class inicioOperador extends StatefulWidget {
-  final title;
-  inicioOperador({Key? key, required this.title}) : super(key: key);
+  inicioOperador({Key? key}) : super(key: key);
   @override
   State<inicioOperador> createState() => _inicioOperadorState();
 }
 
 class _inicioOperadorState extends State<inicioOperador> {
+  final navigationKey = GlobalKey<CurvedNavigationBarState>();
+  int indice = 0;
+
+  final paginas = [
+    AgregarParqueo(),
+    salidaVehiculo(),
+    ListaParqueos(),
+    ListaParqueos(),
+  ];
+
   @override
   Widget build(BuildContext context) {
+    final items = <Widget>[
+      Icon(
+        Icons.login,
+        size: 30,
+      ),
+      Icon(
+        Icons.logout,
+        size: 30,
+      ),
+      Icon(
+        Icons.list,
+        size: 30,
+      ),
+      Icon(
+        Icons.monetization_on,
+        size: 30,
+      ),
+    ];
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -82,7 +115,11 @@ class _inicioOperadorState extends State<inicioOperador> {
                       tooltip: 'Salir',
                       onPressed: () {
                         setState(() {
-                          Navigator.pop(context);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      LoginPage()));
                         });
                       },
                     ),
@@ -93,135 +130,25 @@ class _inicioOperadorState extends State<inicioOperador> {
                 ],
               ),
             ]),
-        //drawer: Drawer(),
-        body: GridView.count(
-          crossAxisCount: 2,
-          children: <Widget>[
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      RaisedButton(
-                        child: Image.asset('img/icono_ingreso.png'),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      AgregarParqueo()));
-                        },
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'ENTRADA DE VEHICULOS',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      RaisedButton(
-                        child: Image.asset('img/icono_salida.png'),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      salidaVehiculo()));
-                        },
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'SALIDA DE VEHICULOS',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      RaisedButton(
-                        child: Image.asset('img/icono_consulta.png'),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      ListaParqueos()));
-                        },
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'CONSULTAR PARQUEOS',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      RaisedButton(
-                        child: Image.asset('img/icono_financiero.png'),
-                        onPressed: () {
-                          /*Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      ListaMensajeros()));*/
-                        },
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'CONSULTA FINANCIERA',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ],
+        //drawer: Drawer(),paginas:[indice],
+        body: paginas[indice],
+        bottomNavigationBar: Theme(
+          data: Theme.of(context).copyWith(
+            iconTheme: IconThemeData(color: Colors.white),
+          ),
+          child: CurvedNavigationBar(
+            key: navigationKey,
+            color: Colors.blue.shade400,
+            backgroundColor: Colors.transparent,
+            height: 50,
+            animationCurve: Curves.easeInOut,
+            animationDuration: Duration(microseconds: 300),
+            index: indice,
+            items: items,
+            onTap: (index) => setState(() {
+              indice = index;
+            }),
+          ),
         ),
       ),
     );

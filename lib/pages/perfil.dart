@@ -1,3 +1,4 @@
+import 'package:best_parking_app/pages/login.dart';
 import 'package:flutter/material.dart';
 
 import '../models/parqueo.dart';
@@ -21,6 +22,78 @@ class Perfilparqueo extends StatelessWidget {
     contextoppal = context;
     return Scaffold(
       appBar: AppBar(
+          /*title: Text(
+              'GESTION DE PARQUEOS',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 22,
+              ),
+            ),*/
+          title: Image.asset('img/Icono.png', scale: 3),
+          leading: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 40,
+                width: 40,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(boxShadow: [
+                  BoxShadow(blurRadius: 7, spreadRadius: 3, color: Colors.white)
+                ], shape: BoxShape.circle, color: Colors.white),
+                child: IconButton(
+                  iconSize: 25,
+                  icon: const Icon(Icons.home),
+                  color: Colors.blue.shade400,
+                  tooltip: 'Salir',
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ),
+              SizedBox(
+                width: 26,
+              )
+            ],
+          ),
+          centerTitle: true,
+          toolbarHeight: 60,
+          backgroundColor: Colors.blue.shade400,
+          //elevation: 14,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(70),
+                  bottomLeft: Radius.circular(70))),
+          actions: [
+            Row(
+              children: [
+                Container(
+                  height: 40,
+                  width: 40,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(boxShadow: [
+                    BoxShadow(
+                        blurRadius: 7, spreadRadius: 3, color: Colors.white)
+                  ], shape: BoxShape.circle, color: Colors.white),
+                  child: IconButton(
+                    icon: const Icon(Icons.output_outlined),
+                    color: Colors.blue.shade400,
+                    tooltip: 'Salir',
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => LoginPage()));
+                    },
+                  ),
+                ),
+                SizedBox(
+                  width: 26,
+                )
+              ],
+            ),
+          ]),
+
+      /*AppBar(
         title: Text("Perfl Parqueo"),
         actions: [
           IconButton(
@@ -40,7 +113,7 @@ class Perfilparqueo extends StatelessWidget {
                 confirmaeliminar(context, perfil[idperfil].id_parqueo);
               })
         ],
-      ),
+      ),*/
       body: ListView(
         children: [
           Padding(
