@@ -61,12 +61,12 @@ class VistaParqueos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        padding: EdgeInsets.all(20.0),
+        //padding: EdgeInsets.all(5.0),
         shrinkWrap: true,
         itemCount: parqueos.length,
         itemBuilder: (context, posicion) {
           return Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(5.0),
             child: Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0),
@@ -79,7 +79,7 @@ class VistaParqueos extends StatelessWidget {
                     )
                   ]*/
                   ),
-              height: 80.0,
+              height: 50.0,
               child: ListTile(
                 onTap: () {
                   Navigator.push(
@@ -100,19 +100,21 @@ class VistaParqueos extends StatelessWidget {
                 ),
                 title: Text(
                   parqueos[posicion].placa,
-                  textAlign: TextAlign.center,
+                  //textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 25,
+                      fontSize: 15,
                       fontFamily: 'Prompt'),
                 ),
                 subtitle: Text(
-                  parqueos[posicion].tipo,
-                  textAlign: TextAlign.center,
+                  parqueos[posicion].hora_entrada.substring(11, 16),
+                  //textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
-                      fontWeight: FontWeight.bold, fontFamily: 'Prompt'),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 10,
+                      fontFamily: 'Prompt'),
                 ),
                 trailing: Container(
                   width: 20,

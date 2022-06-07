@@ -175,11 +175,9 @@ class _AgregarParqueoState extends State<AgregarParqueo> {
                   minWidth: 400.0,
                   height: 60.0,
                   onPressed: () {
-                    if (selectedValue1.toString() !=
-                            'SELECCIONAR TIPO VEHICULO' &&
+                    if (selectedValue1.toString() != 'Tipo vehiculo' &&
                         controlplaca.text.isNotEmpty &&
-                        selectedValue2.toString() !=
-                            'SELECCIONAR MARCA VEHICULO') {
+                        selectedValue2.toString() != 'Marca vehiculo') {
                       var nowTime = DateTime.now();
                       horaentrada = nowTime;
                       if (controltipo.text == 'CARRO') {
