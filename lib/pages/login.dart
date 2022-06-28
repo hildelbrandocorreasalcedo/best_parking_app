@@ -1,6 +1,7 @@
 // ignore_for_file: sort_child_properties_last, prefer_const_constructors
 
 import 'package:best_parking_app/pages/adicionar.dart';
+import 'package:best_parking_app/pages/inicioAdministrador.dart';
 import 'package:best_parking_app/pages/inicioOperador.dart';
 import 'package:best_parking_app/peticiones/peticioneshttp.dart';
 import 'package:flutter/material.dart';
@@ -25,8 +26,8 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   void initState() {
-    controladorUsuario = TextEditingController(text: 'operario');
-    controladorClave = TextEditingController(text: '123');
+    controladorUsuario = TextEditingController(text: '');
+    controladorClave = TextEditingController(text: '');
   }
 
   Widget build(BuildContext context) {
@@ -150,11 +151,19 @@ class _LoginPageState extends State<LoginPage> {
               .then((response) {
             print(response.length);
             if (response.length == 1) {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => inicioOperador(),
-                  ));
+              if (controladorUsuario.text == "operario" &&
+                  controladorClave.text == "123") {
+                print("ha ingresado el operario");
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => inicioOperador()));
+              } else {
+                print("ha ingresado el admin");
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => inicioAdministrador()));
+              }
+
               controladorUsuario.text = '';
               controladorClave.text = '';
             } else {
@@ -169,7 +178,7 @@ class _LoginPageState extends State<LoginPage> {
                             TextButton(
                               onPressed: () {
                                 setState(() {
-                                  Navigator.pop(context);
+                                  // Navigator.pop(context);
                                 });
                               },
                               child: Text(

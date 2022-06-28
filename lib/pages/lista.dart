@@ -71,7 +71,7 @@ class VistaParqueos extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10.0),
                   border: Border.all(width: 2, color: Colors.cyan)
                   /*boxShadow: <BoxShadow>[
-                    BoxShadow(
+                    BoxShadow( 
                       color: Colors.black26,
                       offset: Offset(2.0, 2.0),
                       blurRadius: 8.0,
