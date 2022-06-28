@@ -3,13 +3,12 @@
 import 'package:best_parking_app/pages/login.dart';
 import 'package:best_parking_app/pages/perfil.dart';
 import 'package:best_parking_app/pages/salidavehiculo.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
-import '../peticiones/peticioneshttp.dart';
 import 'adicionar.dart';
+import 'consultarFinanzas.dart';
 import 'lista.dart';
 
 class inicioOperador extends StatefulWidget {
@@ -26,7 +25,7 @@ class _inicioOperadorState extends State<inicioOperador> {
     AgregarParqueo(),
     salidaVehiculo(),
     ListaParqueos(),
-    ListaParqueos(),
+    ConsultaFinacieraDia(),
   ];
 
   @override
