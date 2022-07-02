@@ -1,4 +1,4 @@
-// ignore_for_file: sort_child_properties_last, prefer_const_constructors
+// ignore_for_file: sort_child_properties_last, prefer_const_constructors, unused_import, duplicate_import
 
 import 'package:best_parking_app/pages/adicionar.dart';
 import 'package:best_parking_app/pages/inicioAdministrador.dart';
@@ -138,7 +138,7 @@ class _LoginPageState extends State<LoginPage> {
             style: TextStyle(
               fontSize: 16.0,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
+              color: Colors.white,
             ),
           ),
         ),
@@ -170,24 +170,10 @@ class _LoginPageState extends State<LoginPage> {
               showDialog(
                   context: context,
                   builder: (_) => AlertDialog(
-                          title: Text('ADVERTENCIA'),
-                          content: Text('Usuario/Clave Incorrectos',
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 20)),
-                          actions: [
-                            TextButton(
-                              onPressed: () {
-                                setState(() {
-                                  // Navigator.pop(context);
-                                });
-                              },
-                              child: Text(
-                                'ATRAS',
-                                style:
-                                    TextStyle(color: Colors.red, fontSize: 15),
-                              ),
-                            ),
-                          ]));
+                      title: Text('ADVERTENCIA'),
+                      content: Text('Usuario/Clave Incorrectos',
+                          style: TextStyle(color: Colors.black, fontSize: 20)),
+                      actions: []));
             }
           });
         },
