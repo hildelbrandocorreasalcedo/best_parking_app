@@ -1,3 +1,4 @@
+import 'package:best_parking_app/pages/Administrador/ArqueoGananacias.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,7 @@ class _inicioAdministradorState extends State<inicioAdministrador> {
     AgregarParqueo(),
     salidaVehiculo(),
     ListaParqueos(),
-    ConsultaFinacieraDia(),
+    ArqueoGananacias(),
   ];
 
   @override
