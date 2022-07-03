@@ -1,7 +1,7 @@
 // ignore_for_file: sort_child_properties_last, prefer_const_constructors, unused_import, duplicate_import
 
 import 'package:best_parking_app/pages/adicionar.dart';
-import 'package:best_parking_app/pages/inicioAdministrador.dart';
+import 'package:best_parking_app/pages/Administrador/inicioAdministrador.dart';
 import 'package:best_parking_app/pages/inicioOperador.dart';
 import 'package:best_parking_app/peticiones/peticioneshttp.dart';
 import 'package:flutter/material.dart';
