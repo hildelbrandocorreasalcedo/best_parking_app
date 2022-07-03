@@ -22,7 +22,7 @@ Future<List<Parqueo>> listaParqueosActivos(http.Client client) async {
   //    await client.get('https://desarolloweb2021a.000webhostapp.com/API/listarnotas.php');
   //var id = "2";
   final response = await client.get(Uri.parse(
-      'https://bestparkingapp.000webhostapp.com/API/parlistaParqueosActivosqueovehiculo/listarActivos.php'));
+      'https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/listarActivos.php'));
 
   // Usa la función compute para ejecutar parsePhotos en un isolate separado
   return compute(pasaraListas, response.body);
@@ -33,7 +33,7 @@ Future<List<Parqueo>> listaParqueosInactivos(http.Client client) async {
   //    await client.get('https://desarolloweb2021a.000webhostapp.com/API/listarnotas.php');
   //var id = "2";
   final response = await client.get(Uri.parse(
-      'https://bestparkingapp.000webhostapp.com/API/parlistaParqueosActivosqueovehiculo/listarInactivos.php'));
+      'https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/listarInactivos.php'));
 
   // Usa la función compute para ejecutar parsePhotos en un isolate separado
   return compute(pasaraListas, response.body);

@@ -122,10 +122,8 @@ class vistaFinacieraDia extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                controltotalpagar != "0"
-                                    ? '\nTotal Recaudado:\n' +
-                                        controltotalpagar.text
-                                    : calcularSumaTotalDia().toString(),
+                                '\nTotal Recaudado:\n' +
+                                    calcularSumaTotalDia().toString(),
                                 textAlign: TextAlign.center,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
