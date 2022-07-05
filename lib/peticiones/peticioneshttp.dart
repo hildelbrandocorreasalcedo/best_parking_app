@@ -8,8 +8,8 @@ import 'package:http/http.dart' as http;
 
 Future<List<Parqueo>> listaParqueos(http.Client client) async {
   final response = await client.get(Uri.parse(
-      'http://best-parking-app.infinityfreeapp.com/API/parqueovehiculo/listar.php'));
-  //'https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/listar.php'));
+      //    'http://best-parking-app.infinityfreeapp.com/API/parqueovehiculo/listar.php'));
+      'https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/listar.php'));
 
   // Usa la función compute para ejecutar parsePhotos en un isolate separado
   return compute(pasaraListas, response.body);
@@ -17,8 +17,8 @@ Future<List<Parqueo>> listaParqueos(http.Client client) async {
 
 Future<List<Parqueo>> listaParqueosActivos(http.Client client) async {
   final response = await client.get(Uri.parse(
-      'http://best-parking-app.infinityfreeapp.com/API/parqueovehiculo/listarActivos.php'));
-  //'https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/listarActivos.php'));
+      //    'http://best-parking-app.infinityfreeapp.com/API/parqueovehiculo/listarActivos.php'));
+      'https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/listarActivos.php'));
 
   // Usa la función compute para ejecutar parsePhotos en un isolate separado
   return compute(pasaraListas, response.body);
@@ -26,8 +26,8 @@ Future<List<Parqueo>> listaParqueosActivos(http.Client client) async {
 
 Future<List<Parqueo>> listaParqueosInactivos(http.Client client) async {
   final response = await client.get(Uri.parse(
-      'http://best-parking-app.infinityfreeapp.com/API/parqueovehiculo/listarInactivos.php'));
-  //'https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/listarInactivos.php'));
+      //    'http://best-parking-app.infinityfreeapp.com/API/parqueovehiculo/listarInactivos.php'));
+      'https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/listarInactivos.php'));
 
   // Usa la función compute para ejecutar parsePhotos en un isolate separado
   return compute(pasaraListas, response.body);
@@ -51,8 +51,8 @@ void adicionarParqueo(
     String valorhora,
     String totalpagar) async {
   var url = Uri.parse(
-      'http://best-parking-app.infinityfreeapp.com/API/parqueovehiculo/adicionar.php');
-  // "https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/adicionar.php");
+      //    'http://best-parking-app.infinityfreeapp.com/API/parqueovehiculo/adicionar.php');
+      "https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/adicionar.php");
 
   await http.post(url, body: {
     'tipo': tipo,
@@ -80,8 +80,8 @@ void editarParqueo(
   String totalpagar,
 ) async {
   var url = Uri.parse(
-      'http://best-parking-app.infinityfreeapp.com/API/parqueovehiculo/modificar.php');
-  //"https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/modificar.php");
+      //    'http://best-parking-app.infinityfreeapp.com/API/parqueovehiculo/modificar.php');
+      "https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/modificar.php");
 
   await http.post(url, body: {
     'id_parqueo': id_parqueo,
@@ -99,8 +99,8 @@ void editarParqueo(
 
 void eliminarParqueo(id_parqueo) async {
   var url = Uri.parse(
-      'http://best-parking-app.infinityfreeapp.com/API/parqueovehiculo/eliminar.php');
-  //"https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/eliminar.php");
+      //    'http://best-parking-app.infinityfreeapp.com/API/parqueovehiculo/eliminar.php');
+      "https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/eliminar.php");
 
   await http.post(url, body: {
     'id_parqueo': id_parqueo,
@@ -119,8 +119,8 @@ void facturarParqueo(
     String valorhora,
     String totalpagar) async {
   var url = Uri.parse(
-      'http://best-parking-app.infinityfreeapp.com/API/parqueovehiculo/facturar.php');
-  //"https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/facturar.php");
+      //    'http://best-parking-app.infinityfreeapp.com/API/parqueovehiculo/facturar.php');
+      "https://bestparkingapp.000webhostapp.com/API/parqueovehiculo/facturar.php");
 
   await http.post(url, body: {
     'id_parqueo': id_parqueo,
