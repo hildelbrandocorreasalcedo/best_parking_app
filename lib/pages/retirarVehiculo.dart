@@ -321,7 +321,7 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
               36,
               0,
             ),
-            child: RaisedButton(
+            child: ElevatedButton(
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 0, vertical: 10.0),
                 child: Text(
@@ -334,10 +334,10 @@ class _RetirarVehiculoState extends State<RetirarVehiculo> {
                   ),
                 ),
               ),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
-              elevation: 10.0,
-              color: Colors.blue.shade400,
+              //shape: RoundedRectangleBorder(
+              //borderRadius: BorderRadius.circular(10)),
+              //elevation: 10.0,
+              //color: Colors.blue.shade400,
               onPressed: () {
                 var nowTime = DateTime.now();
                 controlhora_salida.text = '$nowTime';

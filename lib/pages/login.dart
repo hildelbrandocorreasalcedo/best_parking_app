@@ -127,7 +127,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget _bottonLogin() {
     return StreamBuilder(
         builder: (BuildContext context, AsyncSnapshot snapshot) {
-      return RaisedButton(
+      return ElevatedButton(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 80.0, vertical: 15.0),
           width: 300,
@@ -142,9 +142,9 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
         ),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        elevation: 10.0,
-        color: Colors.blue.shade400,
+        //shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        // elevation: 10.0,
+        //color: Colors.blue.shade400,
         onPressed: () {
           validarUsuarios(
                   http.Client(), controladorUsuario.text, controladorClave.text)
