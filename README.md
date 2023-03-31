@@ -6,9 +6,8 @@ Aplicativo Movil de Parqueadero. Requerimientos(Agrega, Retira, Consultas de Veh
 <br>
 <label><b>VIDEO DE best_parking_app Parqueadero Movil</b></label>
 <br>
-https://user-images.githubusercontent.com/63067085/225719892-50056054-c507-44e5-b28b-84fbf1f71b6d.mp4
+https://user-images.githubusercontent.com/63067085/229252038-47718374-b76f-4797-a0dd-706e58f9ed0d.mp4  
 </p>
-https://user-images.githubusercontent.com/63067085/225719892-50056054-c507-44e5-b28b-84fbf1f71b6d.mp4
 
 ![Mobile 1](https://user-images.githubusercontent.com/63067085/187354251-4e6ad15c-c1f6-477b-a040-5a653aefcc84.PNG)
 ![Mobile 2](https://user-images.githubusercontent.com/63067085/187354255-747b2019-f4c8-4232-ab53-0f6cb92572ef.PNG)
