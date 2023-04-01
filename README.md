@@ -10,7 +10,9 @@ Aplicativo Movil de Parqueadero. Requerimientos(Agrega, Retira, Consultas de Veh
 </p>
 
 <div align="center">
-https://user-images.githubusercontent.com/63067085/229252038-47718374-b76f-4797-a0dd-706e58f9ed0d.mp4 
+<video>
+<source src="https://user-images.githubusercontent.com/63067085/229252038-47718374-b76f-4797-a0dd-706e58f9ed0d.mp4" type="video/mp4">
+</video>
 </div>
 
 https://user-images.githubusercontent.com/63067085/229252038-47718374-b76f-4797-a0dd-706e58f9ed0d.mp4
