@@ -5,12 +5,13 @@ Aplicativo Movil de Parqueadero. Requerimientos(Agrega, Retira, Consultas de Veh
 <p align="center">
 <br>
 <label><b>VIDEO DE best_parking_app Parqueadero Movil</b></label>
+<iframe width="480" height="600" src="https://user-images.githubusercontent.com/63067085/229252038-47718374-b76f-4797-a0dd-706e58f9ed0d.mp4"></iframe>   
 <label>https://user-images.githubusercontent.com/63067085/229252038-47718374-b76f-4797-a0dd-706e58f9ed0d.mp4</label>
 <br>
 </p>
 
 <div align="center">
-<iframe width="480" height="600" src="https://user-images.githubusercontent.com/63067085/229252038-47718374-b76f-4797-a0dd-706e58f9ed0d.mp4"></iframe>   
+
 </div>
 
 https://user-images.githubusercontent.com/63067085/229252038-47718374-b76f-4797-a0dd-706e58f9ed0d.mp4
