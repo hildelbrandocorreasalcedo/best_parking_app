@@ -3,9 +3,18 @@
 Aplicativo Movil de Parqueadero. Requerimientos(Agrega, Retira, Consultas de Vehículos, Consulta de Total tarifa al dia y total acumulado), Compuesto por: (Base de datos 000web online, Flutter y Dart))
 
 <p align="center"><strong>VIDEO DE best_parking_app Parqueadero Movil</</strong></p>
-<p align="center">
+  
+  <video class="center" src="https://user-images.githubusercontent.com/63067085/229252038-47718374-b76f-4797-a0dd-706e58f9ed0d.mp4" controls>⁪</video>
+  
+< div style="text-align:center;" >
+< iframe width="560" height="315" src="https://user-images.githubusercontent.com/63067085/229252038-47718374-b76f-4797-a0dd-706e58f9ed0d.mp4">
+< /div >
+  
+<center>
+ <video class="center" src="https://user-images.githubusercontent.com/63067085/229252038-47718374-b76f-4797-a0dd-706e58f9ed0d.mp4" controls width="300"> ⁪</video>
+</center>
+  
 https://user-images.githubusercontent.com/63067085/229252038-47718374-b76f-4797-a0dd-706e58f9ed0d.mp4
-</p>
 
 <p align="center"><strong>IMAGENES DE best_parking_app Parqueadero Movil</</strong></p>
   
