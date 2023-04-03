@@ -19,3 +19,16 @@ https://user-images.githubusercontent.com/63067085/229252038-47718374-b76f-4797-
 ![Mobile 9](https://user-images.githubusercontent.com/63067085/187354273-454fd263-2a67-40bd-9739-8dd230e40ae6.PNG)
 ![Mobile 10](https://user-images.githubusercontent.com/63067085/187354274-d93ed08f-9e60-4a84-98bd-1b44725aeef5.PNG)
 ![Mobile 11](https://user-images.githubusercontent.com/63067085/187354275-0f54bc5f-6d01-49b2-bc34-8095cd32e112.PNG)
+
+<p align="center">
+<br>
+<label><b>follow me and contact me</b></label>
+<br>
+<br>
+<a href="https://www.linkedin.com/in/hildelbrando-correa-salcedo-326776241/"><img src="https://play-lh.googleusercontent.com/kMofEFLjobZy_bCuaiDogzBcUT-dz3BBbOrIEjJ-hqOabjK8ieuevGe6wlTD15QzOqw" alt="Build Status" height=50></a>
+<a href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWtDnGLtzjlhDTmcMzgtkVWHmjWhjKlGRcTCzRprqxxjqttSksslJdWlMgMbSTbqmJMssgKqG"><img src="https://play-lh.googleusercontent.com/KSuaRLiI_FlDP8cM4MzJ23ml3og5Hxb9AapaGTMZ2GgR103mvJ3AAnoOFz1yheeQBBI" alt="Build Status" height=50></a>
+<a href="https://api.whatsapp.com/send?phone=573022605415"><img src="https://play-lh.googleusercontent.com/bYtqbOcTYOlgc6gqZ2rwb8lptHuwlNE75zYJu6Bn076-hTmvd96HH-6v7S0YUAAJXoJN" alt="Build Status" height=50></a>
+<a href="https://www.instagram.com/hbrayancorrea/"><img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Build Status" height=50></a>
+<label><b></b></label>
+<a href="https://www.facebook.com/brayancorreasd/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Logo_de_Facebook.png/220px-Logo_de_Facebook.png" alt="Build Status" height=50></a>
+</p>
